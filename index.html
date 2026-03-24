@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Dashboard — @marcelotavora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== SIDEBAR / NAV ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">&#9733;</span>
+      <div class="brand-text">
+        <span class="brand-name" id="profileName">@marcelotavora</span>
+        <span class="brand-sub">Instagram Analytics</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-tab="dashboard">
+        <span class="nav-icon">&#9999;&#65039;</span>
+        <span class="nav-label">Dashboard Geral</span>
+      </button>
+      <button class="nav-item" data-tab="monthly">
+        <span class="nav-icon">&#128197;</span>
+        <span class="nav-label">Análise Mensal</span>
+      </button>
+      <button class="nav-item" data-tab="content">
+        <span class="nav-icon">&#127942;</span>
+        <span class="nav-label">Melhores Conteúdos</span>
+      </button>
+      <button class="nav-item" data-tab="insights">
+        <span class="nav-icon">&#128161;</span>
+        <span class="nav-label">Insights &amp; Estratégia</span>
+      </button>
+      <button class="nav-item" data-tab="settings">
+        <span class="nav-icon">&#9881;&#65039;</span>
+        <span class="nav-label">Configurações</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>v1.0 &bull; Dados locais</span>
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ===== MAIN WRAPPER ===== -->
+  <div class="main-wrapper">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-title" id="topbarTitle">Dashboard Geral</div>
+      <div class="topbar-right">
+        <span class="topbar-date" id="topbarDate"></span>
+      </div>
+    </header>
+
+    <!-- ===== CONTENT AREA ===== -->
+    <main class="content">
+
+      <!-- ════════════════════════════════════════
+           ABA 1 — DASHBOARD GERAL
+      ════════════════════════════════════════ -->
+      <section class="tab-section active" id="tab-dashboard">
+
+        <div class="section-header">
+          <h2 class="section-title">Visão Geral</h2>
+          <p class="section-sub">Evolução acumulada de todas as métricas</p>
+        </div>
+
+        <!-- KPI Cards Row 1 -->
+        <div class="cards-grid" id="dashboardCards">
+
+          <div class="card kpi-card" data-metric="followers">
+            <div class="card-icon" style="--c1:#f58529;--c2:#dd2a7b;">&#128101;</div>
+            <div class="card-body">
+              <span class="card-label">Seguidores</span>
+              <span class="card-value" id="kpi-followers">—</span>
+              <span class="card-delta" id="delta-followers"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="growth">
+            <div class="card-icon" style="--c1:#dd2a7b;--c2:#8134af;">&#128200;</div>
+            <div class="card-body">
+              <span class="card-label">Crescimento Mensal</span>
+              <span class="card-value" id="kpi-growth">—</span>
+              <span class="card-delta" id="delta-growth"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="engagement">
+            <div class="card-icon" style="--c1:#8134af;--c2:#515bd4;">&#128293;</div>
+            <div class="card-body">
+              <span class="card-label">Taxa de Engajamento</span>
+              <span class="card-value" id="kpi-engagement">—</span>
+              <span class="card-delta" id="delta-engagement"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="reach">
+            <div class="card-icon" style="--c1:#515bd4;--c2:#dd2a7b;">&#127760;</div>
+            <div class="card-body">
+              <span class="card-label">Alcance Médio</span>
+              <span class="card-value" id="kpi-reach">—</span>
+              <span class="card-delta" id="delta-reach"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="impressions">
+            <div class="card-icon" style="--c1:#f58529;--c2:#515bd4;">&#128064;</div>
+            <div class="card-body">
+              <span class="card-label">Impressões</span>
+              <span class="card-value" id="kpi-impressions">—</span>
+              <span class="card-delta" id="delta-impressions"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="likes">
+            <div class="card-icon" style="--c1:#dd2a7b;--c2:#f58529;">&#10084;&#65039;</div>
+            <div class="card-body">
+              <span class="card-label">Curtidas Médias</span>
+              <span class="card-value" id="kpi-likes">—</span>
+              <span class="card-delta" id="delta-likes"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="comments">
+            <div class="card-icon" style="--c1:#8134af;--c2:#f58529;">&#128172;</div>
+            <div class="card-body">
+              <span class="card-label">Comentários Médios</span>
+              <span class="card-value" id="kpi-comments">—</span>
+              <span class="card-delta" id="delta-comments"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="saves">
+            <div class="card-icon" style="--c1:#515bd4;--c2:#8134af;">&#128278;</div>
+            <div class="card-body">
+              <span class="card-label">Salvamentos Médios</span>
+              <span class="card-value" id="kpi-saves">—</span>
+              <span class="card-delta" id="delta-saves"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="storiesViews">
+            <div class="card-icon" style="--c1:#f58529;--c2:#8134af;">&#9654;&#65039;</div>
+            <div class="card-body">
+              <span class="card-label">Views de Stories</span>
+              <span class="card-value" id="kpi-storiesViews">—</span>
+              <span class="card-delta" id="delta-storiesViews"></span>
+            </div>
+          </div>
+
+          <div class="card kpi-card" data-metric="reelsViews">
+            <div class="card-icon" style="--c1:#dd2a7b;--c2:#515bd4;">&#127910;</div>
+            <div class="card-body">
+              <span class="card-label">Visualizações de Reels</span>
+              <span class="card-value" id="kpi-reelsViews">—</span>
+              <span class="card-delta" id="delta-reelsViews"></span>
+            </div>
+          </div>
+
+        </div><!-- /cards-grid -->
+
+        <!-- Charts -->
+        <div class="charts-section">
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">&#128200; Evolução de Seguidores</span>
+            </div>
+            <canvas id="chart-followers" height="100"></canvas>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">&#128293; Taxa de Engajamento (%)</span>
+            </div>
+            <canvas id="chart-engagement" height="100"></canvas>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">&#127760; Alcance vs Impressões</span>
+            </div>
+            <canvas id="chart-reach-impressions" height="100"></canvas>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">&#10084;&#65039; Interações Médias por Post</span>
+            </div>
+            <canvas id="chart-interactions" height="100"></canvas>
+          </div>
+        </div>
+
+      </section><!-- /tab-dashboard -->
+
+
+      <!-- ════════════════════════════════════════
+           ABA 2 — ANÁLISE MENSAL
+      ════════════════════════════════════════ -->
+      <section class="tab-section" id="tab-monthly">
+
+        <div class="section-header">
+          <h2 class="section-title">Análise Mensal</h2>
+          <p class="section-sub">Detalhe e edição das métricas por período</p>
+        </div>
+
+        <!-- Month selector + actions -->
+        <div class="month-controls">
+          <div class="month-selector-wrap">
+            <label for="monthSelect">Mês / Ano</label>
+            <select id="monthSelect" class="select-styled"></select>
+          </div>
+          <button class="btn btn-primary" id="btnAddMonth">&#43; Novo mês</button>
+        </div>
+
+        <!-- Monthly KPI cards -->
+        <div class="cards-grid" id="monthlyCards"></div>
+
+        <!-- Monthly chart -->
+        <div class="chart-card full-width" style="margin-top:1.5rem;">
+          <div class="chart-header">
+            <span class="chart-title">&#128202; Métricas do mês</span>
+          </div>
+          <canvas id="chart-monthly-bar" height="90"></canvas>
+        </div>
+
+        <!-- Auto summary -->
+        <div class="insight-box" id="monthlySummaryBox">
+          <div class="insight-icon">&#129300;</div>
+          <div class="insight-text" id="monthlySummaryText">Selecione um mês para ver o resumo automático.</div>
+        </div>
+
+        <!-- ═══ WIZARD DE ENTRADA MENSAL ═══ -->
+        <div class="wizard-card" id="monthlyFormCard">
+
+          <!-- Barra de progresso + indicadores de etapa -->
+          <div class="wizard-header">
+            <div class="wizard-steps-nav">
+              <div class="wizard-step-item active" data-step="1">
+                <div class="wsn-circle">1</div>
+                <span class="wsn-label">Período</span>
+              </div>
+              <div class="wsn-line"></div>
+              <div class="wizard-step-item" data-step="2">
+                <div class="wsn-circle">2</div>
+                <span class="wsn-label">Crescimento</span>
+              </div>
+              <div class="wsn-line"></div>
+              <div class="wizard-step-item" data-step="3">
+                <div class="wsn-circle">3</div>
+                <span class="wsn-label">Interações</span>
+              </div>
+              <div class="wsn-line"></div>
+              <div class="wizard-step-item" data-step="4">
+                <div class="wsn-circle">4</div>
+                <span class="wsn-label">Top Posts</span>
+              </div>
+            </div>
+            <div class="wizard-progress-track">
+              <div class="wizard-progress-fill" id="wizardProgressFill"></div>
+            </div>
+          </div>
+
+          <form id="monthlyForm">
+
+            <!-- ── ETAPA 1: Período ── -->
+            <div class="wizard-panel active" id="wizardPanel1">
+              <div class="wizard-panel-title">&#128197; Etapa 1 — Período</div>
+              <p class="wizard-panel-desc">Informe o mês e ano de referência para este registro de métricas.</p>
+              <div class="form-grid form-grid--narrow">
+                <div class="form-group">
+                  <label>Mês de referência</label>
+                  <select name="wizMonth" id="wizMonth" class="select-styled">
+                    <option value="01">Janeiro</option>
+                    <option value="02">Fevereiro</option>
+                    <option value="03">Março</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Maio</option>
+                    <option value="06">Junho</option>
+                    <option value="07">Julho</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Ano</label>
+                  <input type="number" name="wizYear" id="wizYear" min="2020" max="2035" placeholder="ex: 2025" />
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ETAPA 2: Crescimento ── -->
+            <div class="wizard-panel" id="wizardPanel2">
+              <div class="wizard-panel-title">&#128200; Etapa 2 — Métricas de Crescimento</div>
+              <p class="wizard-panel-desc">Informe os números gerais de crescimento do perfil no mês.</p>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Total de seguidores (ao final do mês)</label>
+                  <input type="number" name="followers" placeholder="ex: 45.200" />
+                </div>
+                <div class="form-group">
+                  <label>Seguidores ganhos no mês</label>
+                  <input type="number" name="newFollowers" placeholder="ex: 620" />
+                </div>
+                <div class="form-group">
+                  <label>Taxa de engajamento (%)</label>
+                  <input type="number" name="engagement" step="0.01" placeholder="ex: 4.2" />
+                </div>
+                <div class="form-group">
+                  <label>Alcance total do mês</label>
+                  <input type="number" name="reach" placeholder="ex: 3.900" />
+                </div>
+                <div class="form-group">
+                  <label>Impressões totais do mês</label>
+                  <input type="number" name="impressions" placeholder="ex: 118.000" />
+                </div>
+                <div class="form-group">
+                  <label>Número de posts publicados</label>
+                  <input type="number" name="postsCount" placeholder="ex: 13" />
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ETAPA 3: Interações ── -->
+            <div class="wizard-panel" id="wizardPanel3">
+              <div class="wizard-panel-title">&#128172; Etapa 3 — Métricas de Interação</div>
+              <p class="wizard-panel-desc">Informe as médias de interação por post no mês.</p>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Curtidas médias por post</label>
+                  <input type="number" name="likes" placeholder="ex: 415" />
+                </div>
+                <div class="form-group">
+                  <label>Comentários médios por post</label>
+                  <input type="number" name="comments" placeholder="ex: 60" />
+                </div>
+                <div class="form-group">
+                  <label>Salvamentos médios por post</label>
+                  <input type="number" name="saves" placeholder="ex: 260" />
+                </div>
+                <div class="form-group">
+                  <label>Views médias de Reels</label>
+                  <input type="number" name="reelsViews" placeholder="ex: 28.000" />
+                </div>
+                <div class="form-group">
+                  <label>Views médias de Stories</label>
+                  <input type="number" name="storiesViews" placeholder="ex: 2.400" />
+                </div>
+                <div class="form-group">
+                  <label>Melhor dia da semana</label>
+                  <select name="bestDay" class="select-styled">
+                    <option value="">— selecione —</option>
+                    <option>Segunda-feira</option>
+                    <option>Terça-feira</option>
+                    <option>Quarta-feira</option>
+                    <option>Quinta-feira</option>
+                    <option>Sexta-feira</option>
+                    <option>Sábado</option>
+                    <option>Domingo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ETAPA 4: Top Posts ── -->
+            <div class="wizard-panel" id="wizardPanel4">
+              <div class="wizard-panel-title">&#11088; Etapa 4 — Melhores Posts do Mês</div>
+              <p class="wizard-panel-desc">Adicione até 5 posts de destaque. Esses dados alimentam a aba <strong>Melhores Conteúdos</strong> e geram insights automáticos.</p>
+
+              <!-- Lista de posts adicionados no wizard -->
+              <div id="wizardPostsList"></div>
+
+              <!-- Área de adição de post -->
+              <div class="wizard-add-post" id="wizardAddPostArea">
+                <button type="button" class="btn btn-ghost btn-add-post" id="btnWizardAddPost">&#43; Adicionar post</button>
+
+                <!-- Formulário inline de post -->
+                <div class="wizard-post-form" id="wizardPostForm" style="display:none;">
+                  <div class="wizard-post-form-title">Novo post</div>
+                  <div class="form-grid">
+                    <div class="form-group form-group--full">
+                      <label>Link do post (Instagram)</label>
+                      <input type="url" id="wpUrl" placeholder="https://www.instagram.com/p/..." />
+                    </div>
+                    <div class="form-group">
+                      <label>Tipo de conteúdo</label>
+                      <select id="wpType" class="select-styled">
+                        <option value="Reels">&#127910; Reels</option>
+                        <option value="Carrossel">&#128247; Carrossel</option>
+                        <option value="Foto">&#128444;&#65039; Foto</option>
+                        <option value="Stories">&#9654;&#65039; Stories</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Tema / Assunto</label>
+                      <input type="text" id="wpTheme" placeholder="ex: Bastidores do lançamento" />
+                    </div>
+                    <div class="form-group">
+                      <label>Curtidas</label>
+                      <input type="number" id="wpLikes" placeholder="ex: 720" />
+                    </div>
+                    <div class="form-group">
+                      <label>Comentários</label>
+                      <input type="number" id="wpComments" placeholder="ex: 88" />
+                    </div>
+                    <div class="form-group">
+                      <label>Salvamentos</label>
+                      <input type="number" id="wpSaves" placeholder="ex: 340" />
+                    </div>
+                    <div class="form-group">
+                      <label>Alcance</label>
+                      <input type="number" id="wpReach" placeholder="ex: 16.500" />
+                    </div>
+                    <div class="form-group">
+                      <label>Views (Reels / Stories)</label>
+                      <input type="number" id="wpViews" placeholder="ex: 52.000" />
+                    </div>
+                  </div>
+                  <div class="wizard-post-form-actions">
+                    <button type="button" class="btn btn-primary" id="btnWizardConfirmPost">&#43; Confirmar post</button>
+                    <button type="button" class="btn btn-ghost" id="btnWizardCancelPost">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navegação entre etapas -->
+            <div class="wizard-navigation">
+              <button type="button" class="btn btn-ghost" id="btnWizardPrev" style="display:none;">&#8592; Anterior</button>
+              <div class="wizard-nav-right">
+                <button type="button" class="btn btn-primary" id="btnWizardNext">Próximo &#8594;</button>
+                <button type="submit" class="btn btn-save" id="btnWizardSave" style="display:none;">&#128190; Salvar mês</button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Zona de perigo (excluir mês) -->
+          <div class="wizard-danger-zone" id="wizardDangerZone">
+            <button type="button" class="btn btn-danger btn-sm" id="btnDeleteMonth">&#128465; Excluir este mês</button>
+          </div>
+
+        </div><!-- /wizard-card -->
+
+      </section><!-- /tab-monthly -->
+
+
+      <!-- ════════════════════════════════════════
+           ABA 3 — MELHORES CONTEÚDOS
+      ════════════════════════════════════════ -->
+      <section class="tab-section" id="tab-content">
+
+        <div class="section-header">
+          <h2 class="section-title">Melhores Conteúdos</h2>
+          <p class="section-sub">Top posts cadastrados e análise de performance</p>
+        </div>
+
+        <div class="month-controls">
+          <div class="month-selector-wrap">
+            <label for="contentMonthSelect">Mês / Ano</label>
+            <select id="contentMonthSelect" class="select-styled"></select>
+          </div>
+          <button class="btn btn-primary" id="btnAddPost">&#43; Novo post</button>
+        </div>
+
+        <!-- Posts list -->
+        <div id="postsList" class="posts-grid"></div>
+
+        <!-- Add/Edit post form -->
+        <div class="form-card" id="postFormCard" style="display:none;">
+          <h3 class="form-title" id="postFormTitle">Cadastrar post</h3>
+          <form id="postForm" class="metric-form">
+            <input type="hidden" name="postId" />
+
+            <div class="form-grid">
+              <div class="form-group form-group--full">
+                <label>Link do post (Instagram)</label>
+                <input type="url" name="url" placeholder="https://www.instagram.com/p/..." />
+              </div>
+              <div class="form-group">
+                <label>Tipo de conteúdo</label>
+                <select name="type">
+                  <option value="Reels">&#127910; Reels</option>
+                  <option value="Carrossel">&#128247; Carrossel</option>
+                  <option value="Foto">&#128444;&#65039; Foto</option>
+                  <option value="Stories">&#9654;&#65039; Stories</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Tema / Assunto</label>
+                <input type="text" name="theme" placeholder="ex: Dicas de algoritmo" />
+              </div>
+              <div class="form-group">
+                <label>Curtidas</label>
+                <input type="number" name="likes" placeholder="ex: 540" />
+              </div>
+              <div class="form-group">
+                <label>Comentários</label>
+                <input type="number" name="comments" placeholder="ex: 72" />
+              </div>
+              <div class="form-group">
+                <label>Salvamentos</label>
+                <input type="number" name="saves" placeholder="ex: 180" />
+              </div>
+              <div class="form-group">
+                <label>Alcance</label>
+                <input type="number" name="reach" placeholder="ex: 4200" />
+              </div>
+              <div class="form-group">
+                <label>Visualizações (Reels/Stories)</label>
+                <input type="number" name="views" placeholder="ex: 12000" />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">&#128190; Salvar post</button>
+              <button type="button" class="btn btn-ghost" id="btnCancelPost">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+      </section><!-- /tab-content -->
+
+
+      <!-- ════════════════════════════════════════
+           ABA 4 — INSIGHTS & ESTRATÉGIA
+      ════════════════════════════════════════ -->
+      <section class="tab-section" id="tab-insights">
+
+        <div class="section-header">
+          <h2 class="section-title">Insights &amp; Estratégia</h2>
+          <p class="section-sub">Análises automáticas e recomendações personalizadas</p>
+        </div>
+
+        <div class="month-controls">
+          <div class="month-selector-wrap">
+            <label for="insightsMonthSelect">Mês de referência</label>
+            <select id="insightsMonthSelect" class="select-styled"></select>
+          </div>
+        </div>
+
+        <!-- Insights automáticos -->
+        <div class="insights-section">
+          <h3 class="subsection-title">&#128269; Insights do mês</h3>
+          <div id="insightsList" class="insights-list"></div>
+        </div>
+
+        <!-- Sugestões de conteúdo -->
+        <div class="insights-section">
+          <h3 class="subsection-title">&#129395; Sugestões para o próximo mês</h3>
+          <div id="suggestionsList" class="suggestions-grid"></div>
+        </div>
+
+        <!-- Tendências de formato -->
+        <div class="insights-section">
+          <h3 class="subsection-title">&#128202; Tendências de formato</h3>
+          <div id="trendsList" class="trends-grid"></div>
+        </div>
+
+        <!-- Referências do nicho -->
+        <div class="insights-section">
+          <h3 class="subsection-title">&#127775; Referências do nicho</h3>
+          <div id="referencesList" class="references-grid"></div>
+        </div>
+
+      </section><!-- /tab-insights -->
+
+
+      <!-- ════════════════════════════════════════
+           ABA 5 — CONFIGURAÇÕES
+      ════════════════════════════════════════ -->
+      <section class="tab-section" id="tab-settings">
+
+        <div class="section-header">
+          <h2 class="section-title">Configurações</h2>
+          <p class="section-sub">Personalize e gerencie seus dados</p>
+        </div>
+
+        <div class="settings-grid">
+
+          <!-- Perfil -->
+          <div class="form-card">
+            <h3 class="form-title">&#128100; Perfil</h3>
+            <div class="form-group">
+              <label>Nome do perfil / marca</label>
+              <input type="text" id="settingsProfileName" placeholder="ex: @suamarca" />
+            </div>
+            <div class="form-group">
+              <label>Nicho principal</label>
+              <input type="text" id="settingsNiche" placeholder="ex: Infoprodutos, Lançamentos e Análise de Dados" />
+            </div>
+            <button class="btn btn-primary" id="btnSaveProfile">&#128190; Salvar perfil</button>
+          </div>
+
+          <!-- API Token -->
+          <div class="form-card">
+            <h3 class="form-title">&#128273; Integração com API do Instagram</h3>
+            <div class="form-group">
+              <label>Access Token</label>
+              <input type="password" id="settingsToken" placeholder="Cole seu token aqui..." />
+            </div>
+            <div class="api-instructions">
+              <p class="instructions-title">&#128211; Como obter seu Access Token:</p>
+              <ol class="instructions-list">
+                <li>Acesse <strong>developers.facebook.com</strong></li>
+                <li>Crie um app do tipo <strong>Business</strong></li>
+                <li>Adicione o produto <strong>Instagram Graph API</strong></li>
+                <li>Gere um token com permissões: <code>instagram_basic</code>, <code>instagram_manage_insights</code></li>
+                <li>Cole o token acima e salve</li>
+              </ol>
+              <p class="instructions-note">&#9888;&#65039; Esta versão armazena o token apenas localmente no seu navegador.</p>
+            </div>
+            <button class="btn btn-primary" id="btnSaveToken">&#128190; Salvar token</button>
+          </div>
+
+          <!-- Instagram Sync -->
+          <div class="form-card sync-card" id="syncCard">
+            <h3 class="form-title">&#128257; Sincronizar com Instagram</h3>
+            <p class="sync-desc">Importa automaticamente os dados do mês atual da sua conta Instagram Business via Graph API.</p>
+
+            <!-- Progress area (hidden by default) -->
+            <div class="sync-status" id="syncStatus" style="display:none">
+              <div class="sync-progress-wrap">
+                <div class="sync-progress-bar" id="syncProgressBar" style="width:0%"></div>
+              </div>
+              <p class="sync-step" id="syncStep"></p>
+            </div>
+
+            <!-- Result box (hidden by default) -->
+            <div class="sync-result" id="syncResult" style="display:none"></div>
+
+            <div class="sync-actions">
+              <button class="btn btn-sync" id="btnSync">
+                <span class="btn-sync-icon">&#128257;</span>
+                <span class="btn-sync-label">Sincronizar com Instagram</span>
+              </button>
+            </div>
+
+            <p class="instructions-note" style="margin-top:.85rem">
+              &#9888;&#65039; Requer permissões: <code>instagram_basic</code>, <code>instagram_manage_insights</code>, <code>pages_show_list</code>, <code>pages_read_engagement</code>
+            </p>
+          </div>
+
+          <!-- Data management -->
+          <div class="form-card">
+            <h3 class="form-title">&#128452; Gerenciar Dados</h3>
+            <div class="data-actions">
+              <div class="data-action-item">
+                <div class="data-action-info">
+                  <span class="data-action-label">Exportar dados</span>
+                  <span class="data-action-desc">Baixa todos os dados em formato JSON</span>
+                </div>
+                <button class="btn btn-secondary" id="btnExport">&#11015;&#65039; Exportar</button>
+              </div>
+              <div class="data-action-item">
+                <div class="data-action-info">
+                  <span class="data-action-label">Importar dados</span>
+                  <span class="data-action-desc">Restaura dados de um arquivo JSON</span>
+                </div>
+                <button class="btn btn-secondary" id="btnImportTrigger">&#11014;&#65039; Importar</button>
+                <input type="file" id="btnImport" accept=".json" style="display:none;" />
+              </div>
+              <div class="data-action-item danger-zone">
+                <div class="data-action-info">
+                  <span class="data-action-label">Limpar todos os dados</span>
+                  <span class="data-action-desc">Remove permanentemente todos os dados salvos</span>
+                </div>
+                <button class="btn btn-danger" id="btnClearData">&#128465; Limpar tudo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="form-card about-card">
+            <h3 class="form-title">&#8505;&#65039; Sobre este dashboard</h3>
+            <div class="about-content">
+              <p>Dashboard desenvolvido para <strong>infoprodutores</strong> acompanharem métricas do Instagram, resultados de lançamentos e performance de conteúdo de forma organizada e visual.</p>
+              <ul class="about-list">
+                <li>&#10003; 100% offline — dados no seu navegador</li>
+                <li>&#10003; Sem cadastro ou login necessário</li>
+                <li>&#10003; Insights gerados automaticamente</li>
+                <li>&#10003; Exportação e importação de dados</li>
+              </ul>
+              <p class="about-version">Versão 1.0 &bull; 2025</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section><!-- /tab-settings -->
+
+    </main><!-- /content -->
+  </div><!-- /main-wrapper -->
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== MODAL (confirmações) ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <p class="modal-message" id="modalMessage">Tem certeza?</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="modalCancel">Cancelar</button>
+        <button class="btn btn-danger" id="modalConfirm">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/insights.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
