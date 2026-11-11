@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>1BMG · Carrossel de Case — Rodrigo Silva Arqueologia</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* específicos deste carrossel */
+  .h-xl{font-size:118px}
+  .num-giant{font-family:var(--display);font-weight:900;line-height:.8;letter-spacing:-.03em}
+  .step{display:flex;align-items:center;gap:30px;padding:26px 40px;border-radius:44px}
+  .step .n{font:900 150px/0.8 var(--display);color:transparent;-webkit-text-stroke:3px var(--neon);letter-spacing:-.04em;min-width:190px}
+  .step p{font:500 35px/1.22 var(--body)}
+  .step p b{color:var(--neon);font-weight:700}
+  .tag{display:inline-block;margin-top:12px;padding:7px 16px;border-radius:12px;background:rgba(226,252,81,.16);color:var(--neon);font:800 21px/1 var(--display);letter-spacing:.14em}
+  .row3{display:flex;align-items:center;gap:26px;padding:26px 34px 26px 26px;border-radius:36px}
+  .row3 p{font:500 36px/1.2 var(--body)}
+  .row3 p b{color:var(--neon);font-weight:700}
+  .stat{position:absolute;left:var(--pad)}
+  .stat .big{font:900 188px/0.8 var(--display);letter-spacing:-.04em;color:var(--navy)}
+  .stat .big small{font-size:84px;letter-spacing:-.01em;margin-left:14px}
+  .stat .lbl{font:700 40px/1.15 var(--body);margin-top:20px;color:var(--navy)}
+  .rule{position:absolute;left:var(--pad);right:var(--pad);height:4px;background:var(--navy);opacity:.9;border-radius:4px}
+</style>
+</head>
+<body>
+<script src="../assets/svg/data.js"></script>
+
+<!-- Fundo contínuo (atravessa os 6 slides): degradê navy→roxo + grafismos do ícone em linha -->
+<template id="strip">
+<svg xmlns="http://www.w3.org/2000/svg" width="{N}" height="1350" viewBox="0 0 {N} 1350">
+  <defs>
+    <linearGradient id="gcases" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#142544"/><stop offset=".42" stop-color="#2a1a80"/><stop offset="1" stop-color="#7a22f2"/>
+    </linearGradient>
+  </defs>
+  <rect width="{N}" height="1350" fill="url(#gcases)"/>
+  <!-- ícones em linha gigantes, cruzando as bordas dos slides -->
+  <g transform="translate(1180 760) rotate(12) scale(3.1) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#8140FA" stroke-opacity=".75" stroke-width="1.6" stroke-linejoin="round"/></g>
+  <g transform="translate(2330 470) rotate(-9) scale(2.6) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#E2FC51" stroke-opacity=".30" stroke-width="1.5" stroke-linejoin="round"/></g>
+  <g transform="translate(3500 980) rotate(15) scale(3.2) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#8140FA" stroke-opacity=".55" stroke-width="1.6" stroke-linejoin="round"/></g>
+  <g transform="translate(4560 330) rotate(-12) scale(2.5) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#E2FC51" stroke-opacity=".28" stroke-width="1.5" stroke-linejoin="round"/></g>
+  <g transform="translate(5560 700) rotate(8) scale(3.3) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#E2FC51" stroke-opacity=".5" stroke-width="1.6" stroke-linejoin="round"/></g>
+</svg>
+</template>
+
+<div class="deck">
+
+<!-- ============ 01 · CAPA ============ -->
+<section class="slide" data-chrome>
+  <!-- sombra sólida do ícone (máscara) + eco em linha neon = “3D” do logo -->
+  <div class="abs z1" data-icon-solid style="left:360px;top:700px;width:760px;height:1026px;color:var(--blue);transform:rotate(-8deg)"></div>
+  <div class="abs z1" data-icon-line data-sw="2.2" style="left:402px;top:660px;width:760px;height:1026px;color:var(--neon);transform:rotate(-8deg)"></div>
+  <img class="abs z2" src="../assets/img/rodrigo-cut.png" style="left:450px;bottom:-30px;width:680px">
+
+  <div class="abs z3" style="left:76px;top:168px"><span class="pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>CASE · YOUTUBE</span></div>
+  <div class="abs z3 d d8" style="left:76px;top:262px;font-size:54px;line-height:1.08;width:930px">
+    Como ajudamos o canal<br><span class="hl" style="font-weight:900">@rodrigosilvaarqueologia</span>
+  </div>
+  <div class="abs z3 d d8" style="left:76px;top:436px;font-size:54px;line-height:1">a chegar a</div>
+  <div class="abs z3 num-giant neon" style="left:62px;top:508px;font-size:300px">+3,7</div>
+  <div class="abs z3 d" style="left:76px;top:770px;font-size:66px;line-height:.98;width:520px">milhões<br>de inscritos</div>
+  <div class="abs z3" style="left:76px;top:1010px;width:330px">
+    <img src="../assets/img/yt-logo.png" style="height:46px;display:block;margin-bottom:22px">
+    <p class="b t-sm" style="opacity:.92">De conteúdo de nicho a uma <b>autoridade gigantesca</b> no YouTube.</p>
+  </div>
+</section>
+
+<!-- ============ 02 · DESAFIO ============ -->
+<section class="slide" data-chrome>
+  <img class="abs z1" src="../assets/img/thumbs-strip.jpg" style="left:-80px;top:168px;width:1240px;transform:rotate(-5deg);border-radius:26px;box-shadow:0 30px 70px rgba(0,0,0,.45);outline:6px solid rgba(255,255,255,.14)">
+  <div class="abs z3" style="left:76px;top:520px"><span class="pill ghost"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 10-13h-6z"/></svg>DESAFIO</span></div>
+  <div class="abs z3 d" style="left:76px;top:606px;width:930px;font-size:68px;line-height:1.06">
+    Como <span class="hl">escalar a audiência</span> de um canal de arqueologia bíblica?
+  </div>
+  <p class="abs z3 b t-md" style="left:76px;top:900px;width:900px;opacity:.95;font-size:36px">…sem perder a <b>profundidade</b> do conteúdo e a <b>retenção</b> do público.</p>
+  <div class="abs z3" style="left:76px;top:1030px;right:76px;display:flex;gap:14px;flex-wrap:wrap">
+    <span class="pill" style="background:#fff;font-size:21px;padding:13px 22px">Profissionalização</span>
+    <span class="pill" style="background:#fff;font-size:21px;padding:13px 22px">Otimização</span>
+    <span class="pill" style="background:#fff;font-size:21px;padding:13px 22px">Consistência</span>
+  </div>
+</section>
+
+<!-- ============ 03 · ESTRATÉGIA ============ -->
+<section class="slide" data-chrome>
+  <div class="abs z2 pm" data-pm data-src="../assets/img/rodrigo-punho.jpg" data-pos="xMidYMid" data-bg="#142544" style="right:-70px;top:122px;width:430px;height:580px;transform:rotate(9deg)"></div>
+  <div class="abs z3 d" style="left:76px;top:176px;font-size:92px;width:640px;line-height:.96">A nossa <span class="neon">estratégia</span></div>
+  <p class="abs z3 b t-sm" style="left:76px;top:392px;width:560px;opacity:.95">Unimos <b>análise de dados</b> com produção de alta performance para impulsionar a autoridade do canal.</p>
+
+  <div class="abs z3 card step" style="left:76px;top:560px;width:928px;transform:rotate(-1.6deg)">
+    <div class="n">01</div><div><p><b>Títulos e thumbs</b> focados em alta taxa de clique</p><span class="tag">CTR</span></div>
+  </div>
+  <div class="abs z3 card step" style="left:76px;top:770px;width:928px;transform:rotate(1.2deg)">
+    <div class="n">02</div><div><p><b>Roteiros e retenção</b> otimizados para audiência engajada</p><span class="tag">RETENÇÃO</span></div>
+  </div>
+  <div class="abs z3 card step" style="left:76px;top:980px;width:928px;transform:rotate(-1deg)">
+    <div class="n">03</div><div><p><b>SEO completo</b> para indexação estratégica dos 1.281 vídeos</p><span class="tag">SEO</span></div>
+  </div>
+</section>
+
+<!-- ============ 04 · RESULTADOS (fundo neon, quebra de ritmo) ============ -->
+<section class="slide" data-chrome data-theme="light" data-nostrip style="background:var(--neon)">
+  <div class="abs" data-icon-line data-sw="1.6" style="left:520px;top:300px;width:900px;height:1215px;color:var(--navy);opacity:.2;transform:rotate(14deg)"></div>
+  <div class="abs z2 pm" data-pm data-src="../assets/img/rodrigo-palco.jpg" data-pos="xMidYMin" data-bg="#142544" style="right:-30px;top:130px;width:420px;height:567px;transform:rotate(7deg)"></div>
+  <div class="abs z3 d navy" style="left:76px;top:176px;font-size:92px;line-height:.92;width:620px">Resultados<br>incríveis</div>
+  <div class="stat z3" style="top:400px"><div class="big">+3,72<small>MI</small></div><div class="lbl">de inscritos acumulados</div></div>
+  <div class="rule z3" style="top:668px"></div>
+  <div class="stat z3" style="top:716px"><div class="big">+319<small>MI</small></div><div class="lbl">de visualizações totais</div></div>
+  <div class="rule z3" style="top:984px"></div>
+  <div class="stat z3" style="top:1036px"><div class="big" style="font-size:140px">1.281</div><div class="lbl" style="font-size:36px;margin-top:14px">vídeos com SEO estratégico</div></div>
+</section>
+
+<!-- ============ 05 · A CHAVE DO CRESCIMENTO ============ -->
+<section class="slide" data-chrome>
+  <div class="abs z2 pm" data-pm data-src="../assets/img/rodrigo-youtube.jpg" data-pos="xMidYMid" data-bg="#142544" data-stroke="#E2FC51" data-sw="2.5" style="left:400px;top:150px;width:560px;height:756px;transform:rotate(-5deg)"></div>
+  <div class="abs z3" style="left:76px;top:200px;width:230px;height:230px;border-radius:50%;background:var(--neon);display:grid;place-items:center;color:var(--navy);box-shadow:0 0 0 18px rgba(226,252,81,.22)">
+    <svg viewBox="0 0 24 24" width="110" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+  </div>
+  <div class="abs z3 d" style="left:76px;top:960px;font-size:70px;white-space:nowrap">A chave do <span class="neon">crescimento</span></div>
+  <p class="abs z3 b t-md" style="left:76px;top:1050px;width:930px;font-size:35px">O segredo para bater centenas de milhões de visualizações está na <b>combinação de conteúdo relevante com estratégias precisas</b> de distribuição e posicionamento.</p>
+</section>
+
+<!-- ============ 06 · CTA ============ -->
+<section class="slide" data-chrome data-last>
+  <img class="abs z1" src="../assets/img/thumbs-grid.jpg" style="left:420px;top:700px;width:820px;transform:rotate(-9deg);border-radius:30px;box-shadow:0 40px 90px rgba(0,0,0,.5);opacity:.9">
+  <div class="abs z2" style="left:0;right:0;top:520px;bottom:0;background:linear-gradient(180deg,rgba(60,24,160,0) 0%,rgba(30,20,110,.88) 55%,rgba(20,37,68,.98) 100%)"></div>
+  <div class="abs z3 d" style="left:76px;top:190px;width:930px;font-size:88px;line-height:1.02">
+    Quer escalar o seu projeto e atingir <span class="hl">marcas históricas</span> como essa?
+  </div>
+  <div class="abs z3" data-logo style="left:76px;top:850px;width:380px;color:#fff"></div>
+  <div class="abs z3" style="left:76px;top:1160px"><span class="swipe" style="font-size:30px;padding:20px 22px 20px 40px;gap:22px">FALE COM A GENTE<span class="ar" style="width:60px;height:60px"><span data-arrow style="width:30px"></span></span></span></div>
+  <div class="abs z3 handle" style="left:76px;top:1262px"><span style="width:34px" data-icon></span>@1bigmedia</div>
+</section>
+
+</div>
+<script src="lib.js"></script>
+</body>
+</html>

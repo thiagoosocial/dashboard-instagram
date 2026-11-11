@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>1BMG · Carrossel Atualização de Mercado — YouTube protege imagem e voz contra IA</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  .step{display:flex;gap:26px;align-items:flex-start}
+  .step .no{flex:none;width:84px;height:84px;border-radius:26px;background:var(--neon);color:var(--navy);display:grid;place-items:center;font:900 46px/1 var(--display)}
+  .step h4{font:900 40px/1.05 var(--display);color:var(--neon);text-transform:uppercase;margin:2px 0 10px}
+  .step p{font:500 31px/1.28 var(--body)}
+  .rowp{display:flex;align-items:center;gap:24px;padding:18px 28px 18px 20px;border-radius:34px}
+  .rowp .ico-box{width:84px;height:84px;border-radius:26px}
+  .rowp .ico-box svg{width:46px;height:46px}
+  .rowp h5{font:900 31px/1.05 var(--display);color:var(--neon);text-transform:uppercase;letter-spacing:.005em;margin-bottom:6px}
+  .rowp p{font:500 28px/1.2 var(--body)}
+  .todo{display:flex;gap:28px;align-items:flex-start;padding:30px 36px 30px 30px;border-radius:40px}
+  .todo .ck{flex:none;width:72px;height:72px;border-radius:22px;background:var(--neon);color:var(--navy);display:grid;place-items:center}
+  .todo .ck svg{width:42px;height:42px}
+  .todo h4{font:900 36px/1 var(--display);text-transform:uppercase;color:var(--neon);margin-bottom:10px}
+  .todo p{font:500 31px/1.26 var(--body)}
+  .glitch{position:absolute;inset:0;background-size:cover}
+</style>
+</head>
+<body>
+<script src="../assets/svg/data.js"></script>
+
+<template id="strip">
+<svg xmlns="http://www.w3.org/2000/svg" width="{N}" height="1350" viewBox="0 0 {N} 1350">
+  <defs>
+    <linearGradient id="gmerc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#142544"/><stop offset=".45" stop-color="#1f2c8f"/><stop offset=".75" stop-color="#5a2fe0"/><stop offset="1" stop-color="#8140FA"/>
+    </linearGradient>
+  </defs>
+  <rect width="{N}" height="1350" fill="url(#gmerc)"/>
+  <g transform="translate(1250 700) rotate(-10) scale(3.0) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#79AAF7" stroke-opacity=".38" stroke-width="1.5" stroke-linejoin="round"/></g>
+  <g transform="translate(2600 960) rotate(12) scale(2.8) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#E2FC51" stroke-opacity=".28" stroke-width="1.5" stroke-linejoin="round"/></g>
+  <g transform="translate(3800 420) rotate(-14) scale(3.1) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#79AAF7" stroke-opacity=".35" stroke-width="1.5" stroke-linejoin="round"/></g>
+  <g transform="translate(5100 900) rotate(9) scale(3.2) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#E2FC51" stroke-opacity=".3" stroke-width="1.5" stroke-linejoin="round"/></g>
+  <g transform="translate(6500 520) rotate(-8) scale(3.0) translate(-616 -312)"><path d="{ICOND}" fill="none" stroke="#E2FC51" stroke-opacity=".45" stroke-width="1.6" stroke-linejoin="round"/></g>
+</svg>
+</template>
+
+<div class="deck">
+
+<!-- ============ 01 · CAPA ============ -->
+<section class="slide" data-chrome data-nostrip>
+  <img class="abs fill" src="../assets/img/mic-bg.jpg" style="width:1080px;height:1350px;object-fit:cover;object-position:28% 50%">
+  <div class="abs fill z1" style="background:linear-gradient(180deg,rgba(20,37,68,.96) 0%,rgba(20,37,68,.78) 34%,rgba(20,37,68,0) 56%,rgba(20,37,68,.35) 74%,rgba(20,37,68,.94) 100%)"></div>
+  <div class="abs fill z1 scan"></div>
+
+  <div class="abs z3" style="left:76px;top:168px"><span class="pill"><i class="dot"></i>Atualização de mercado</span></div>
+  <div class="abs z3 d" style="left:76px;top:256px;width:930px;font-size:78px;line-height:.98">
+    Sua imagem e voz agora estão <span class="hl">protegidas</span> contra IA no <span class="neon">YouTube</span>
+  </div>
+
+  <!-- moldura de scan em volta do microfone -->
+  <div class="abs z3" style="left:318px;top:720px;width:430px;height:300px">
+    <i class="brk tl"></i><i class="brk tr"></i><i class="brk bl"></i><i class="brk br"></i>
+    <span class="pill ghost" style="position:absolute;left:50%;top:-24px;transform:translateX(-50%);background:var(--navy);font-size:19px;padding:10px 22px"><i class="dot" style="width:12px;height:12px"></i>VOZ + ROSTO · VERIFICANDO</span>
+  </div>
+  <div class="abs z3" data-wave="62" data-h="96" style="left:76px;top:1040px;--bw:8px;opacity:.9"></div>
+
+  <div class="abs z3 card solid" style="left:76px;top:1020px;width:928px;padding:28px 36px;border-radius:36px;background:rgba(20,37,68,.9);display:none"></div>
+  <p class="abs z4 b" style="left:76px;top:1128px;width:928px;font-size:28px;line-height:1.25">Conheça a ferramenta oficial do <b class="neon">YouTube Studio</b> para identificar e derrubar <b>clones digitais, golpes com deepfake</b> e uso não autorizado da sua imagem.</p>
+</section>
+
+<!-- ============ 02 · O RISCO ============ -->
+<section class="slide" data-chrome data-nostrip>
+  <div class="abs fill" style="background:#142544"></div>
+  <div class="abs" style="left:0;top:0;width:1080px;height:780px;overflow:hidden">
+    <div class="glitch" style="background-image:url(../assets/img/studio-neon.jpg);background-position:50% 72%;transform:translate(-14px,0);filter:hue-rotate(-60deg) saturate(1.6);mix-blend-mode:screen;opacity:.65"></div>
+    <div class="glitch" style="background-image:url(../assets/img/studio-neon.jpg);background-position:50% 72%;transform:translate(16px,0);filter:hue-rotate(60deg) saturate(1.6);mix-blend-mode:screen;opacity:.55"></div>
+    <div class="glitch" style="background-image:url(../assets/img/studio-neon.jpg);background-position:50% 72%;opacity:.9"></div>
+    <div class="abs fill scan" style="opacity:.8"></div>
+    <!-- fatias de glitch -->
+    
+    
+    <div class="abs fill" style="background:linear-gradient(180deg,rgba(20,37,68,.4) 0%,rgba(20,37,68,0) 18%,rgba(20,37,68,0) 62%,#142544 100%)"></div>
+  </div>
+  <div class="abs z3" style="left:76px;top:560px"><span class="pill ghost" style="background:rgba(20,37,68,.82)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22zm1 15h-2v-2h2zm0-4h-2V9h2z"/></svg>O risco dos golpes digitais</span></div>
+  <div class="abs z3 d" style="left:76px;top:650px;width:930px;font-size:66px;line-height:1">Por que essa atualização <span class="hl">muda o jogo</span> para quem produz conteúdo?</div>
+  <p class="abs z3 b" style="left:76px;top:960px;width:928px;font-size:33px;line-height:1.28">Golpes com <b>IA para clonar rosto e voz</b> de influenciadores e jornalistas explodiram. Criminosos usavam a credibilidade de canais para aplicar <b>fraudes financeiras</b> na audiência. <b class="neon">Agora o YouTube assume o controle direto dessa verificação.</b></p>
+</section>
+
+<!-- ============ 03 · O NÚMERO ============ -->
+<section class="slide" data-chrome>
+  <div class="abs z1" style="left:0;top:380px;width:62px;height:520px;background:var(--neon)"></div>
+  <div class="abs z3" style="left:96px;top:176px"><span class="pill ghost">Ações no 1º tri de 2026</span></div>
+  <!-- número com eco em linha (3D do logo) -->
+  <div class="abs z2 d stroke" style="left:118px;top:372px;font-size:330px;line-height:.9;letter-spacing:-.045em;opacity:.55;-webkit-text-stroke:3px var(--neon)">1,2Mi+</div>
+  <div class="abs z2 d stroke" style="left:100px;top:390px;font-size:330px;line-height:.9;letter-spacing:-.045em;opacity:.3;-webkit-text-stroke:3px var(--neon)">1,2Mi+</div>
+  <div class="abs z3 d neon" style="left:82px;top:408px;font-size:330px;line-height:.9;letter-spacing:-.045em">1,2Mi+</div>
+  <p class="abs z3 d d8" style="left:96px;top:730px;width:880px;font-size:54px;line-height:1.02">Vídeos derrubados no Brasil</p>
+  <p class="abs z3 b" style="left:96px;top:806px;width:860px;font-size:36px;line-height:1.26;opacity:.95">por violar diretrizes de <b>desinformação, assédio e fraude.</b></p>
+  <div class="abs z3" style="left:76px;top:972px;width:928px;height:4px;background:rgba(255,255,255,.35)"></div>
+  <p class="abs z3 b" style="left:76px;top:996px;width:928px;font-size:37px;line-height:1.26">Com a nova tecnologia, a verificação deixa de ser genérica e passa a <span class="hl" style="font-weight:700">proteger a identidade individual</span> de cada criador e figura pública.</p>
+</section>
+
+<!-- ============ 04 · COMO FUNCIONA ============ -->
+<section class="slide" data-chrome>
+  <div class="abs z3 d" style="left:76px;top:176px;width:900px;font-size:80px;line-height:.95">Como funciona no <span class="neon">YouTube Studio</span></div>
+  <img class="abs z2" src="../assets/img/phone.png" style="right:-70px;top:470px;width:470px;transform:rotate(7deg);filter:drop-shadow(0 40px 60px rgba(0,0,0,.5))">
+  <div class="abs z1" style="left:116px;top:560px;width:6px;height:520px;background:repeating-linear-gradient(180deg,var(--neon) 0 14px,transparent 14px 26px);opacity:.7"></div>
+
+  <div class="abs z3 step" style="left:76px;top:440px;width:560px"><div class="no">1</div><div><h4>Registro de biometria</h4><p>Você envia docs e fotos no YouTube Studio para criar seu <b>molde digital</b>.</p></div></div>
+  <div class="abs z3 step" style="left:76px;top:710px;width:560px"><div class="no">2</div><div><h4>Varredura por IA</h4><p>O algoritmo do Google escaneia uploads <b>em tempo real</b>, comparando rosto e voz.</p></div></div>
+  <div class="abs z3 step" style="left:76px;top:980px;width:560px"><div class="no">3</div><div><h4>Alerta &amp; derrubada</h4><p>Detectou uso indevido? Você é avisado <b>na hora</b> e pode derrubar o vídeo.</p></div></div>
+</section>
+
+<!-- ============ 05 · POR QUE AGORA ============ -->
+<section class="slide" data-chrome>
+  <div class="abs z1" style="left:0;top:0;width:1080px;height:340px;overflow:hidden">
+    <img src="../assets/img/camera.jpg" style="width:1080px;height:340px;object-fit:cover;object-position:50% 38%;display:block">
+    <div class="abs fill" style="background:linear-gradient(180deg,rgba(20,37,68,.55),rgba(20,37,68,.1) 45%,rgba(31,44,143,.96) 100%)"></div>
+  </div>
+  <div class="abs z3 d" style="left:76px;top:250px;width:930px;font-size:62px;line-height:.95">Por que a ferramenta <span class="neon">chegou agora?</span></div>
+
+  <div class="abs z3" style="left:76px;top:400px;width:928px;display:flex;flex-direction:column;gap:14px">
+    <div class="card rowp"><div class="ico-box"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/></svg></div><div><h5>Pedido urgente do TSE</h5><p>Expansão rápida do sistema para o período eleitoral brasileiro.</p></div></div>
+    <div class="card rowp"><div class="ico-box p"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></div><div><h5>Candidaturas femininas</h5><p>Suporte prioritário: são o maior alvo de deepfakes tóxicos.</p></div></div>
+    <div class="card rowp"><div class="ico-box b"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4 11 2 2 5-6-1.6-1.3L10.9 13l-1.4-1.3z"/></svg></div><div><h5>Processo eleitoral</h5><p>Evita vídeos fakes de candidatos anunciando propostas falsas.</p></div></div>
+    <div class="card rowp"><div class="ico-box"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h13v14H4zm15 3h2v9a2 2 0 0 1-2 2zM6.5 8v2.5h8V8zm0 4.5V14h8v-1.5z"/></svg></div><div><h5>Proteção à imprensa</h5><p>Jornalistas do Grupo Bandeirantes já foram cadastrados.</p></div></div>
+    <div class="card rowp"><div class="ico-box p"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div><h5>Blindagem do canal</h5><p>Resguardo direto da marca do veículo de comunicação.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ 06 · O QUE FAZER HOJE ============ -->
+<section class="slide" data-chrome>
+  <div class="abs z2 pm" data-pm data-src="../assets/img/creator-smile.jpg" data-pos="xMidYMid" data-bg="#142544" data-stroke="#E2FC51" data-sw="2.5" style="right:-60px;top:130px;width:340px;height:460px;transform:rotate(8deg)"></div>
+  <div class="abs z3 d" style="left:76px;top:176px;width:520px;font-size:60px;line-height:.95">O que você, <span class="neon">creator,</span> deve fazer <span class="hl">hoje</span></div>
+  <div class="abs z3" style="left:76px;top:560px;width:928px;display:flex;flex-direction:column;gap:18px">
+    <div class="card todo"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><div><h4>Acesse o YouTube Studio</h4><p>Verifique a aba de Direitos Autorais e Detecção de Conteúdo para conferir a liberação da ferramenta no seu canal.</p></div></div>
+    <div class="card todo"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><div><h4>Mantenha seus dados atualizados</h4><p>Faça a verificação oficial para o algoritmo reconhecer a sua titularidade e a da sua equipe.</p></div></div>
+    <div class="card todo"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><div><h4>Avise sua comunidade</h4><p>Oriente os inscritos a confiar só nos vídeos do canal oficial e a denunciar perfis clones.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ 07 · CTA ============ -->
+<section class="slide" data-chrome data-last data-nostrip>
+  <img class="abs fill" src="../assets/img/yt-plaques.jpg" style="width:1080px;height:1350px;object-fit:cover;object-position:62% 50%">
+  <div class="abs fill z1" style="background:linear-gradient(180deg,rgba(20,37,68,.93) 0%,rgba(70,36,190,.82) 45%,rgba(129,64,250,.72) 100%)"></div>
+  <div class="abs z1" data-icon-line data-sw="1.6" style="left:520px;top:520px;width:800px;height:1080px;color:var(--neon);opacity:.45;transform:rotate(12deg)"></div>
+  <div class="abs z3 d" style="left:76px;top:200px;width:930px;font-size:76px;line-height:1">Proteja seu canal e <span class="hl">escale</span> sua presença no YouTube</div>
+  <p class="abs z3 b" style="left:76px;top:590px;width:860px;font-size:35px;line-height:1.28">Nossa equipe acompanha de perto todas as novidades e atualizações do algoritmo do YouTube para manter sua marca digital <b>segura, profissional e em constante crescimento.</b></p>
+  <div class="abs z3" data-logo style="left:76px;top:880px;width:360px;color:#fff"></div>
+  <div class="abs z3" style="left:76px;top:1160px"><span class="swipe" style="font-size:30px;padding:20px 22px 20px 40px;gap:22px">FALE COM A GENTE<span class="ar" style="width:60px;height:60px"><span data-arrow style="width:30px"></span></span></span></div>
+  <div class="abs z3 handle" style="left:76px;top:1262px"><span style="width:34px" data-icon></span>@1bigmedia</div>
+</section>
+
+</div>
+<script src="lib.js"></script>
+</body>
+</html>

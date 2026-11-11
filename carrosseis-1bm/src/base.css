@@ -1,0 +1,91 @@
+/* ============ 1BMG — sistema de carrossel (identidade: manual set/2021) ============ */
+@font-face{font-family:"Outfit";font-weight:800;src:url(../assets/fonts/outfit-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:900;src:url(../assets/fonts/outfit-latin-900-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;src:url(../assets/fonts/dm-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:500;src:url(../assets/fonts/dm-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:700;src:url(../assets/fonts/dm-sans-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;font-style:italic;src:url(../assets/fonts/dm-sans-latin-400-italic.woff2) format("woff2")}
+
+:root{
+  --navy:#142544; --blue:#3157F7; --purple:#8140FA; --neon:#E2FC51;
+  --sky:#79AAF7; --violet:#B22BF9; --lime:#CCE26F; --gray:#E8E8E9;
+  /* Cera Black não é livre: Outfit é o substituto. Para usar a Cera, troque só esta linha. */
+  --display:"Outfit","Cera Pro","Cera Black",Arial,sans-serif;
+  --body:"DM Sans",Arial,sans-serif;
+  --fg:#fff; --pad:76px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#0b1020}
+body{font-family:var(--body);color:#fff;-webkit-font-smoothing:antialiased}
+.deck{display:flex;flex-direction:column;gap:40px;width:1080px;margin:0 auto;padding:40px 0}
+
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;flex:none;color:var(--fg);background:var(--navy)}
+.slide>*{position:absolute}
+.strip{left:0;top:0;pointer-events:none}
+.strip svg{display:block}
+.abs{position:absolute}
+.fill{inset:0}
+.z1{z-index:1}.z2{z-index:2}.z3{z-index:3}.z4{z-index:4}
+
+/* tema claro (fundo neon) */
+.slide[data-theme=light]{--fg:var(--navy)}
+
+/* ---------- tipografia ---------- */
+.d{font-family:var(--display);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.94}
+.d8{font-weight:800}
+.b{font-family:var(--body);font-weight:500;line-height:1.28}
+.t-sm{font-size:30px}.t-md{font-size:38px}.t-lg{font-size:46px}
+.neon{color:var(--neon)} .navy{color:var(--navy)} .sky{color:var(--sky)}
+.hl{background:var(--neon);color:var(--navy);padding:.03em .2em .0;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:.12em}
+.hl-p{background:var(--purple);color:#fff;padding:.03em .2em;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:.12em}
+.stroke{color:transparent;-webkit-text-stroke:3px var(--neon)}
+.stroke-w{color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.9)}
+b,strong{font-weight:700}
+
+/* ---------- peças ---------- */
+.pill{display:inline-flex;align-items:center;gap:14px;padding:15px 30px 15px;border-radius:999px;background:var(--neon);color:var(--navy);
+  font:900 25px/1 var(--display);letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
+.pill.ghost{background:transparent;border:3px solid var(--neon);color:var(--neon);padding:12px 28px}
+.pill.navy{background:var(--navy);color:#fff}
+.pill svg{width:26px;height:26px;flex:none}
+.dot{width:16px;height:16px;border-radius:50%;background:#ff3b5c;box-shadow:0 0 0 6px rgba(255,59,92,.28)}
+.card{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);border-radius:40px;backdrop-filter:blur(14px)}
+.card.solid{background:var(--navy);border-color:rgba(255,255,255,.12)}
+.ico-box{display:grid;place-items:center;width:92px;height:92px;border-radius:28px;background:var(--neon);color:var(--navy);flex:none}
+.ico-box svg{width:50px;height:50px}
+.ico-box.p{background:var(--purple);color:#fff}
+.ico-box.b{background:var(--blue);color:#fff}
+
+/* ---------- chrome do carrossel ---------- */
+.chrome-top{left:var(--pad);right:var(--pad);top:60px;height:70px;display:flex;align-items:center;justify-content:space-between;z-index:20}
+.chrome-top .c-logo{width:150px;color:var(--fg)}
+.chrome-top .c-logo svg{display:block;width:100%;height:auto}
+.pager{display:flex;align-items:center;gap:18px;font:800 24px/1 var(--display);letter-spacing:.08em}
+.ticks{display:flex;gap:8px}
+.ticks i{display:block;width:30px;height:8px;border-radius:8px;background:currentColor;opacity:.28;transform:skewX(-20deg)}
+.ticks i.on{opacity:1;background:var(--neon)}
+.slide[data-theme=light] .ticks i.on{background:var(--navy)}
+.chrome-bot{left:var(--pad);right:var(--pad);bottom:58px;display:flex;justify-content:space-between;align-items:center;z-index:20}
+.swipe{display:inline-flex;align-items:center;gap:16px;padding:14px 16px 14px 30px;border-radius:999px;background:var(--neon);color:var(--navy);
+  font:900 23px/1 var(--display);letter-spacing:.14em}
+.swipe .ar{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--neon)}
+.swipe .ar svg{width:24px;height:24px}
+.slide[data-theme=light] .swipe{background:var(--navy);color:var(--neon)}
+.slide[data-theme=light] .swipe .ar{background:var(--neon);color:var(--navy)}
+.handle{font:700 28px/1 var(--body);opacity:.9;display:flex;align-items:center;gap:12px}
+.handle svg{width:34px;height:auto}
+
+/* ---------- máscara de foto no formato do ícone ---------- */
+.pm svg{display:block;width:100%;height:100%;overflow:visible}
+.rot{transform-origin:50% 50%}
+.mix-screen{mix-blend-mode:screen}
+
+/* ---------- scan UI (tema detecção) ---------- */
+.brk{position:absolute;width:70px;height:70px;border:0 solid var(--neon)}
+.brk.tl{left:0;top:0;border-left-width:7px;border-top-width:7px;border-top-left-radius:22px}
+.brk.tr{right:0;top:0;border-right-width:7px;border-top-width:7px;border-top-right-radius:22px}
+.brk.bl{left:0;bottom:0;border-left-width:7px;border-bottom-width:7px;border-bottom-left-radius:22px}
+.brk.br{right:0;bottom:0;border-right-width:7px;border-bottom-width:7px;border-bottom-right-radius:22px}
+
+[data-wave] i{display:block;width:var(--bw,9px);border-radius:8px;background:var(--neon);flex:none}
+.scan{background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 6px)}
