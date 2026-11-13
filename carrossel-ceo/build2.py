@@ -43,6 +43,16 @@ V7=V_STYLE+f"""<div class="v" style="flex-direction:column;gap:20px;padding:20px
 <div style="display:flex;gap:12px">{''.join(pill(x) for x in ['Imagem','Decisões','Relação com marcas'])}</div></div>"""
 V8=f'<img src="file://{B}/img/oneprofile.png" style="width:100%;display:block">'
 
+
+def photo(f,pos,overlay=''):
+    return f"""<div style="position:absolute;inset:0;background:url('file://{B}/img/{f}') {pos}/cover"></div>{overlay}"""
+GRAD='<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.82) 100%)"></div>'
+def badge(big,small): return f'<div style="position:absolute;left:30px;bottom:26px;color:#fff;font-family:Montserrat"><div style="font-size:60px;font-weight:800;letter-spacing:-2px;color:#ff3b3b;line-height:1">{big}</div><div style="font-size:20px;font-weight:700;margin-top:6px">{small}</div></div>'
+V1=photo('jensen1.png','center 22%',GRAD+badge('−US$ 193 bi','valor de mercado da Nvidia em um dia'))
+def sx(n,t): return f'<div><div style="font-size:42px;font-weight:800;color:#ff3b3b;line-height:1">{n}</div><div style="font-size:17px;font-weight:700;margin-top:4px">{t}</div></div>'
+V2=photo('jensen2.png','center 20%',GRAD+f'<div style="position:absolute;left:30px;right:30px;bottom:24px;color:#fff;font-family:Montserrat;display:flex;gap:44px">{sx("63","anos")}{sx("1993","cofundou a Nvidia")}{sx("33 anos","como único CEO")}</div>')
+V4=photo('nvidia.png','center 55%','<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.8) 100%)"></div>'+badge('−US$ 193 bi','em um dia · 9/11 · Forbes').replace('bottom:26px','top:24px'))
+
 page2(1,"Um dos <b>CEOs mais poderosos do mundo</b> deixou o cargo."+G+"E em um único dia, depois que o conselho abriu uma investigação sobre ele, a Nvidia perdeu <b>US$ 193 bilhões</b> em valor de mercado."+G+"<b>Isso é o peso de um CEO.</b>",46,V1)
 page2(2,"<b>Jensen Huang</b>, 63 anos, cofundou a Nvidia em 1993 e foi seu único CEO em 33 anos."+G+"Em 8 de novembro, o conselho abriu uma <b>investigação independente</b> após reportagens de que ele teria sido alvo de uma operação de inteligência estrangeira. No mesmo dia, Huang admitiu em e-mail aos funcionários um relacionamento extraconjugal."+G+"A mulher é executiva de uma empresa parceira da Nvidia em Singapura e, segundo autoridades americanas, é apontada como ligada à inteligência chinesa.",34,V2)
 page2(3,"<b>10/11:</b> a Nvidia contrata o escritório Wachtell, Lipton, Rosen & Katz para conduzir a investigação."+G+"<b>11/11:</b> novos relatos apontam um segundo relacionamento, com uma executiva da própria Nvidia que se reportava a ele."+G+"<b>12/11:</b> Huang deixa o comando da empresa. A diretora financeira, Colette Kress, assume como CEO interina."+G+"Huang negou ter comprometido a segurança nacional ou segredos da Nvidia.",38,V3)
