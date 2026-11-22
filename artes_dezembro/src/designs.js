@@ -10,10 +10,10 @@ const biosseguranca = page(`
 ${arcs}${logo()}
 <div style="position:absolute;left:70px;right:70px;top:214px">
   <span class="tag" style="font-size:19px;padding:12px 26px">${ICON.ribbon('#D3253A', 18)} Dia Mundial de Luta contra a Aids</span>
-  <h1 style="margin-top:34px;font-size:86px">Biossegurança<br>é <b>cuidado</b><br>com você.</h1>
-  <p class="sub" style="margin-top:30px;width:880px">Em cada atendimento, seguimos protocolos rigorosos de <b>esterilização e proteção</b> para você sorrir com tranquilidade.</p>
+  <h1 style="font-size:76px;line-height:1.02;margin-top:26px;">Biossegurança<br>é <b>cuidado</b><br>com você.</h1>
+  <p class="sub" style="margin-top:18px;width:880px;font-size:28px">Em cada atendimento, seguimos protocolos rigorosos de <b>esterilização e proteção</b> para você sorrir com tranquilidade.</p>
 </div>
-<div class="photo fade" style="height:640px;background-image:url(${u('biosseguranca.jpg')});background-size:cover;background-position:center 12%"></div>
+<div class="photo fade" style="height:735px;background-image:url(${u('biosseguranca_wide.jpg')});background-size:cover;background-position:center bottom"></div>
 <div class="bar"><div class="chk">${ICON.check}</div>
 <div class="t"><b>Informação é prevenção.</b> Procure uma unidade de saúde para testagem e acompanhamento.</div></div>
 `);
@@ -23,10 +23,10 @@ const acessibilidade = page(`
 ${arcs}${logo()}
 <div style="position:absolute;left:70px;right:70px;top:214px">
   <span class="tag">Dia Internacional da Pessoa com Deficiência</span>
-  <h1 style="margin-top:34px">Todo sorriso<br>merece <b>ser bem<br>cuidado.</b></h1>
-  <p class="sub" style="margin-top:28px;width:900px">Atendimento <b>acolhedor, respeitoso e adaptado</b> às necessidades de cada paciente.</p>
+  <h1 style="font-size:76px;line-height:1.02;margin-top:26px">Todo sorriso<br>merece <b>ser bem<br>cuidado.</b></h1>
+  <p class="sub" style="margin-top:18px;width:900px;font-size:28px">Atendimento <b>acolhedor, respeitoso e adaptado</b> às necessidades de cada paciente.</p>
 </div>
-<div class="photo fade" style="height:660px;background-image:url(${u('cadeirante.jpg')});background-size:cover;background-position:center 48%"></div>
+<div class="photo fade" style="height:735px;background-image:url(${u('cadeirante_wide.jpg')});background-size:cover;background-position:center bottom"></div>
 <div class="bar"><div class="chk">${ICON.check}</div>
 <div class="t">Tem alguma necessidade específica? <b>Conte para a nossa equipe</b> e preparamos tudo para você.</div></div>
 `);
@@ -36,10 +36,10 @@ const voluntario = page(`
 ${arcs}${logo()}
 <div style="position:absolute;left:70px;right:70px;top:214px">
   <span class="tag">5 de dezembro · Dia do Voluntário</span>
-  <h1 style="margin-top:34px">Pequenos gestos<br>geram <b>grandes<br>sorrisos.</b></h1>
-  <p class="sub" style="margin-top:28px;width:900px">Lançamos a <b>Ação Solidária de Natal</b>: vamos arrecadar kits de higiene bucal para quem mais precisa.</p>
+  <h1 style="font-size:76px;line-height:1.02;margin-top:26px">Pequenos gestos<br>geram <b>grandes<br>sorrisos.</b></h1>
+  <p class="sub" style="margin-top:18px;width:900px;font-size:28px">Lançamos a <b>Ação Solidária de Natal</b>: vamos arrecadar kits de higiene bucal para quem mais precisa.</p>
 </div>
-<div class="photo fade" style="height:610px;background-image:url(${u('voluntarios.jpg')});background-size:cover;background-position:center 30%"></div>
+<div class="photo fade" style="height:735px;background-image:url(${u('voluntarios_wide.jpg')});background-size:cover;background-position:center bottom"></div>
 <div class="bar"><div class="chk">${ICON.check}</div>
 <div class="t"><b>Doe escova, creme e fio dental.</b> Fale com a nossa equipe e saiba como participar.</div>
 <div class="cta">Participe ${ICON.arrow}</div></div>
@@ -53,7 +53,7 @@ ${arcs}${logo()}
   <h1 style="margin-top:32px;font-size:78px">Antes das férias,<br><b>cuide do sorriso</b><br>de quem você ama.</h1>
   <div style="margin-top:28px;display:flex;gap:14px"><span class="chip solid">Check-up em família</span><span class="chip">Vale-cuidado de Natal</span></div>
 </div>
-<div class="photo fade" style="height:770px;background-image:url(${u('familia_wide.jpg')});background-size:cover;background-position:center bottom"></div>
+<div class="photo fade" style="height:725px;background-image:url(${u('familia_wide.jpg')});background-size:cover;background-position:center bottom"></div>
 <div class="bar"><div class="chk">${ICON.check}</div>
 <div class="t"><b>Agende o horário de toda a família</b> e comece as férias com o sorriso em dia.</div></div>
 `);
@@ -83,10 +83,10 @@ const verao = page(`
 ${logo()}
 <div style="position:absolute;left:70px;right:70px;top:214px">
   <span class="tag">21 de dezembro · Começa o verão</span>
-  <h1 style="margin-top:34px;font-size:90px">Sorriso <b>pronto</b><br>para as festas<br>e para o verão.</h1>
-  <p class="sub" style="margin-top:28px;width:880px">Clareamento dental com <b>avaliação profissional</b> para você brilhar nas festas e nas férias.</p>
+  <h1 style="font-size:76px;line-height:1.02;margin-top:26px;">Sorriso <b>pronto</b><br>para as festas<br>e para o verão.</h1>
+  <p class="sub" style="margin-top:18px;width:880px;font-size:28px">Clareamento dental com <b>avaliação profissional</b> para você brilhar nas festas e nas férias.</p>
 </div>
-<div class="photo fade" style="height:700px;background-image:url(${u('verao.jpg')});background-size:cover;background-position:center 46%"></div>
+<div class="photo fade" style="height:735px;background-image:url(${u('verao_wide.jpg')});background-size:cover;background-position:center bottom"></div>
 <div class="bar"><div class="chk">${ICON.check}</div>
 <div class="t"><b>Agende sua avaliação.</b> O clareamento é indicado após consulta com o dentista.</div>
 <div class="cta">Agende ${ICON.arrow}</div></div>
@@ -126,9 +126,9 @@ const carr1 = page(`
 ${logo()}
 <div style="position:absolute;left:70px;right:70px;top:214px">
   <span class="tag">21 de dezembro · Começa o verão</span>
-  <h1 style="margin-top:32px;font-size:84px">4 cuidados com<br>o sorriso <b>na<br>viagem.</b></h1>
+  <h1 style="font-size:76px;line-height:1.02;margin-top:26px;">4 cuidados com<br>o sorriso <b>na<br>viagem.</b></h1>
 </div>
-<div class="photo fade" style="height:700px;background-image:url(${u('verao.jpg')});background-size:cover;background-position:center 46%"></div>
+<div class="photo fade" style="height:735px;background-image:url(${u('verao_wide.jpg')});background-size:cover;background-position:center bottom"></div>
 <div class="bar"><div class="chk">${ICON.check}</div>
 <div class="t">Guia rápido para <b>curtir as férias</b> sem dor de dente.</div>
 <div class="cta">Arraste ${ICON.arrow}</div></div>`, `.cream{background:radial-gradient(1300px 950px at 15% 0,#FFF6EA 0,#FBE6CE 55%,#F6D2AE 100%)}`);

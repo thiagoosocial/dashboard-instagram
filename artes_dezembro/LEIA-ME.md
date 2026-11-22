@@ -54,3 +54,9 @@ Logos recoloridos (fundo transparente) em `assets/`: `logo_laranja`, `logo_marro
 
 ## Editar
 Os layouts estão em `src/` (HTML gerado por `src/designs.js`). Para regerar: `npm i playwright @fontsource/montserrat @fontsource/playfair-display` e `node src/build.js`.
+
+## Versão 2 (layout "pôster", sem pessoas)
+Mesmas 18 artes (vale, 9 datas, 6 slides do carrossel, cartão frente e verso) em outro conceito: moldura, data em destaque, ilustração central em medalhão e texto centralizado. Arquivos com prefixo `v2_` em `v2/png` e `v2/pdf`.
+
+## Ajustes da versão 1
+Fotos regeneradas em enquadramento mais aberto (cabeças inteiras) em 01/12, 03/12, 05/12, 08/12 e 21/12 (post e capa do carrossel).
