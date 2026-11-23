@@ -10,8 +10,8 @@ const fs = require('fs');
     await p.evaluate(() => document.fonts.ready);
     await p.waitForTimeout(250);
     const m = await p.evaluate(() => {
-      const main = document.querySelector('.main');
-      return { overflow: main.scrollHeight - main.clientHeight };
+      const sl = document.querySelector('.slide');
+      return { overflow: sl.scrollHeight - sl.clientHeight };
     });
     console.log(f, JSON.stringify(m));
     await p.screenshot({ path: out + '/slide-' + f.slice(1, 3) + '.png' });
