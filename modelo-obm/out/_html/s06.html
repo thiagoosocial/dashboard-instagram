@@ -1,45 +1,45 @@
-<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:'DM Sans';font-weight:400;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-400-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:500;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-500-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:600;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-600-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:700;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-700-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:800;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-800-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:900;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-900-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:600;font-style:italic;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-600-italic.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:700;font-style:italic;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-700-italic.woff2') format('woff2');}
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:'Brico';font-weight:700;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/bricolage-grotesque-latin-700-normal.woff2') format('woff2');}@font-face{font-family:'Brico';font-weight:800;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/bricolage-grotesque-latin-800-normal.woff2') format('woff2');}@font-face{font-family:'Hand';font-weight:600;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/caveat-latin-600-normal.woff2') format('woff2');}@font-face{font-family:'Hand';font-weight:700;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/caveat-latin-700-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:400;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-400-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:500;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-500-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:700;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-700-normal.woff2') format('woff2');}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1350px;background:#000}
-.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'DM Sans',sans-serif;color:#fff;
-  display:flex;flex-direction:column;padding:60px 68px 54px}
-.dark{background:radial-gradient(circle,rgba(255,255,255,.07) 1.4px,transparent 1.6px) 0 0/34px 34px,
-  radial-gradient(90% 55% at 100% 0%,#1b2a5c 0%,rgba(20,37,68,0) 70%),#0a0e1a}
-.light{background:radial-gradient(circle,rgba(20,37,68,.10) 1.4px,transparent 1.6px) 0 0/34px 34px,#E8E8E9;color:#142544}
-.gfx{position:absolute;background-repeat:no-repeat;background-size:contain;pointer-events:none;z-index:0}
-.top{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;height:54px;flex:none}
-.who{display:flex;align-items:center;gap:14px;font-size:25px;font-weight:500;letter-spacing:-.2px}
-.who .ic{height:44px;width:auto} .light .who .ic{filter:invert(1)}
-.tag{font-size:19px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:9px 18px;border-radius:99px;
-  border:1.5px solid rgba(255,255,255,.4);color:rgba(255,255,255,.85)}
-.light .tag{border-color:rgba(20,37,68,.4);color:#142544}
-.main{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;min-height:0;padding-top:30px}
-h1{font-weight:800;letter-spacing:-.04em;line-height:1.12}
-.mk{background:#E2FC51;color:#142544;padding:.0em .14em .04em;border-radius:.12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.body{font-size:30px;line-height:1.42;font-weight:400;color:rgba(255,255,255,.88)}
-.body b{font-weight:700;color:#fff}
-.body p+p{margin-top:.6em}
-.light .body{color:#2b3550} .light .body b{color:#142544}
-.call{border-left:9px solid #E2FC51;padding:2px 0 2px 24px;font-weight:700;letter-spacing:-.01em;line-height:1.2;color:#fff}
-.light .call{border-left-color:#8140FA;color:#142544}
-.src{font-size:21px;color:rgba(255,255,255,.5);margin-top:14px} .light .src{color:#5d6784}
-.bot{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;height:58px;margin-top:auto;flex:none}
-.prog{display:flex;gap:8px;align-items:center}
-.prog i{display:block;width:38px;height:7px;border-radius:4px;background:rgba(255,255,255,.22)}
-.prog i.on{background:#E2FC51} .prog i.cur{width:64px}
-.light .prog i{background:rgba(20,37,68,.2)} .light .prog i.on{background:#142544}
-.chip{display:flex;align-items:center;gap:12px;height:54px;padding:0 24px;border-radius:99px;font-size:22px;font-weight:700;
-  background:rgba(255,255,255,.12);color:#fff}
-.light .chip{background:rgba(20,37,68,.1);color:#142544}
-.chip.f{background:#E2FC51;color:#142544}
-.panel{border-radius:30px;padding:30px 34px}
-.lbl{font-size:20px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.light .lbl{color:#5d6784}
-</style></head><body><div class="slide dark"><div class="gfx" style="left:640px;top:-60px;width:520px;height:700px;background-image:url(file:///home/user/dashboard-instagram/modelo-obm/assets/icon_line_lilac.png);transform:rotate(14deg);opacity:0.09"></div><div class="top"><div class="who"><img class="ic" src="file:///home/user/dashboard-instagram/modelo-obm/assets/icon_white.png">@reinaldoheleno <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1d9bf0"/><path d="M7 12.5l3.2 3.2L17 8.8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tag">YouTube 2027</div></div><div class="main"><div style="font-size:200px;font-weight:900;line-height:.6;height:96px;color:#E2FC51;margin-top:12px">“</div>
-      <div class="lbl" style="margin-top:14px">Minha leitura</div>
-      <h1 style="font-size:96px;margin-top:14px">Canal monetizado vai ficar <span class="mk">mais escasso.</span></h1>
-      <div class="body" style="margin-top:30px;font-size:29px"><p>Quanto mais difícil entrar, <b>mais valem os canais que já estão dentro.</b> Mas estar dentro não basta: o piso dos Shorts exige <b>acompanhar os dados toda semana.</b></p>
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'DM Sans',sans-serif;
+  display:flex;flex-direction:column;padding:56px 66px 50px}
+.paper{background:#F2EEE5;color:#142544}
+.dark{background:radial-gradient(80% 50% at 100% 0%,#1d2c5e 0%,rgba(20,37,68,0) 70%),#0c1222;color:#fff}
+.grain{position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .6 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");pointer-events:none;z-index:20}
+.paper .grain{opacity:.16;mix-blend-mode:multiply} .dark .grain{opacity:.07;mix-blend-mode:screen}
+.hdr{position:relative;z-index:6;display:flex;align-items:center;justify-content:space-between;flex:none;height:92px}
+.who{display:flex;align-items:center;gap:18px}
+.av{width:84px;height:84px;border-radius:50%;background:url('file:///home/user/dashboard-instagram/modelo-obm/assets/avatar.png') center/cover;border:4px solid #E2FC51;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.paper .av{border-color:#142544}
+.nm{font-family:'Brico';font-weight:800;font-size:30px;letter-spacing:-.02em;line-height:1.1;display:flex;align-items:center;gap:8px}
+.hd{font-family:'Hand';font-weight:600;font-size:34px;line-height:1;opacity:.75;margin-top:2px}
+.pg{font-family:'Hand';font-weight:700;font-size:46px;transform:rotate(5deg);opacity:.85}
+.main{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;min-height:0;padding-top:26px}
+h1{font-family:'Brico';font-weight:800;letter-spacing:-.04em;line-height:1.1}
+.hl{color:#142544;background:linear-gradient(103deg,rgba(226,252,81,0) 0,#E2FC51 2.5%,#E2FC51 97%,rgba(226,252,81,0) 100%);
+  padding:.02em .14em .06em;border-radius:.3em .12em .34em .14em/.22em .32em .14em .3em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.body{font-size:30px;line-height:1.42;font-weight:400}
+.body b{font-weight:700} .body p+p{margin-top:.6em}
+.dark .body{color:rgba(255,255,255,.9)} .paper .body{color:#2b3550}
+.hand{font-family:'Hand';font-weight:700;line-height:1.02;letter-spacing:.005em}
+.dark .hand.k{color:#E2FC51} .paper .hand.k{color:#8140FA}
+.src{font-size:21px;margin-top:14px;opacity:.55}
+.next{position:absolute;right:70px;bottom:44px;z-index:7;display:flex;align-items:center;gap:6px;font-family:'Hand';font-weight:700;font-size:46px}
+.dark .next{color:#E2FC51} .paper .next{color:#8140FA}
+.pola{position:absolute;background:#fff;padding:18px 18px 72px;box-shadow:0 22px 40px rgba(0,0,0,.28),0 2px 6px rgba(0,0,0,.2);z-index:4}
+.pola .ph{width:100%;height:100%;background-size:cover;background-position:center}
+.pola .cap{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:'Hand';font-weight:700;font-size:42px;color:#142544}
+.tape{position:absolute;width:150px;height:46px;background:rgba(235,225,190,.82);box-shadow:0 2px 6px rgba(0,0,0,.18);z-index:8;
+  clip-path:polygon(2% 0,98% 6%,100% 94%,0 100%)}
+.sticky{position:absolute;background:#E2FC51;color:#142544;padding:20px 22px 22px;box-shadow:0 14px 26px rgba(0,0,0,.22);z-index:5}
+.sticky .n{font-family:'Brico';font-weight:800;font-size:60px;letter-spacing:-.04em;line-height:1}
+.sticky .t{font-family:'Hand';font-weight:700;font-size:32px;line-height:1.05;margin-top:6px}
+</style></head><body><div class="slide paper"><div class="hdr"><div class="who"><div><div class="nm">Reinaldo Heleno <svg width="26" height="26" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1d9bf0"/><path d="M7 12.5l3.2 3.2L17 8.8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="hd">@reinaldoheleno</div></div></div><div class="pg">6/7</div></div><div class="main"><div style="display:flex;align-items:flex-start;gap:26px;margin-top:6px">
+        <div style="width:150px;height:150px;border-radius:50%;background:url(file:///home/user/dashboard-instagram/modelo-obm/assets/avatar.png) center/cover;border:5px solid #142544;flex:none;margin-top:60px"></div>
+        <div style="position:relative;background:#142544;color:#fff;border-radius:46px 46px 46px 10px;padding:34px 40px 40px;box-shadow:0 20px 40px rgba(20,37,68,.25)">
+          <div class="hand" style="font-size:44px;color:#E2FC51;opacity:.95">Minha leitura:</div>
+          <h1 style="font-size:76px;margin-top:6px">canal monetizado vai ficar <span class="hl">mais escasso.</span></h1></div></div>
+      <div class="body" style="margin-top:38px;font-size:31px"><p>Quanto mais difícil entrar, <b>mais valem os canais que já estão dentro.</b> Mas estar dentro não basta: o piso dos Shorts exige <b>acompanhar os dados toda semana.</b></p>
         <p>Para podcasts, grupos de mídia e canais com cortes, o Shorts continua sendo porta de descoberta.</p></div>
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:26px">
-        <div class="call" style="font-size:44px;width:460px;letter-spacing:-.03em;line-height:1.1">Só vira receita acima do piso.</div>
-        <div style="margin-right:-18px"><svg width="490" height="268" viewBox="0 0 490 268" style="display:block;overflow:visible;flex:none"><defs><clipPath id="mbench470" clipPathUnits="objectBoundingBox"><path d="M0 .07 L.40 0 L.47 .13 L.80 .07 L1 .58 Q1 .73 .88 .80 L.60 .97 Q.32 1.07 .10 .91 Q0 .83 0 .70 Z"/></clipPath></defs><g transform="translate(20,18) scale(470,250)"><path d="M0 .07 L.40 0 L.47 .13 L.80 .07 L1 .58 Q1 .73 .88 .80 L.60 .97 Q.32 1.07 .10 .91 Q0 .83 0 .70 Z" fill="none" stroke="#8140FA" stroke-width="3" vector-effect="non-scaling-stroke"/></g><image href="file:///home/user/dashboard-instagram/modelo-obm/assets/refs/bench.png" x="0" y="0" width="470" height="250" preserveAspectRatio="xMidYMid slice" clip-path="url(#mbench470)"/></svg></div></div></div><div class="bot"><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on cur"></i><i class=""></i></div><div class="chip">Arrasta<svg width="34" height="16" viewBox="0 0 34 16"><path d="M2 8h28M23 2l7 6-7 6" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div></body></html>
+      <div class="pola" style="left:530px;top:770px;width:420px;height:260px;transform:rotate(4deg);padding-bottom:18px"><div class="ph" style="background-image:url(file:///home/user/dashboard-instagram/modelo-obm/assets/refs/bench.png);background-position:center"></div><div class="tape" style="left:135.0px;top:-26px;transform:rotate(-3deg)"></div></div>
+      <div class="hand k" style="font-size:64px;margin-top:34px;width:500px;position:relative">Só vira receita acima do piso.<svg style="position:absolute;pointer-events:none;overflow:visible;left:0;bottom:-30px" width="430" height="18" viewBox="0 0 300 18" preserveAspectRatio="none"><path d="M3 11 C 50 3, 90 15, 140 8 S 230 4, 297 9" fill="none" stroke="#8140FA" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></div></div><div class="next"><span>arrasta</span><svg width="86" height="40" viewBox="0 0 86 40"><path d="M4 22 C 24 12, 44 30, 78 18 M62 6 L80 18 L64 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="grain"></div></div></body></html>
