@@ -131,14 +131,16 @@ def make_cover_bg():
     continuando as colunas da borda superior da foto (sem fade para cor clara)."""
     from PIL import Image
     import numpy as np
-    src = Image.open(f"{HERE}/assets/refs/trophy.png").convert("RGB")
-    s = 1.3
+    src = Image.open(f"{HERE}/assets/refs/cover_neal.png").convert("RGB")
+    s = 1.45
     w, h = int(src.width * s), int(src.height * s)
     big = src.resize((w, h), Image.LANCZOS)
-    x0 = (w - 1080) // 2
+    x0 = 100
     big = big.crop((x0, 0, x0 + 1080, h))
     top_h = 1350 - h
     strip = np.asarray(big.crop((0, 0, 1080, 8))).astype(float).mean(axis=0)          # 1080x3
+    k = np.ones(31) / 31
+    strip = np.stack([np.convolve(np.pad(strip[:, c], 15, mode='edge'), k, mode='valid') for c in range(3)], axis=1)
     ext = np.tile(strip[None, :, :], (top_h + 160, 1, 1))
     rng = np.random.default_rng(7)
     ext = np.clip(ext + rng.normal(0, 3.2, ext.shape), 0, 255).astype("uint8")
