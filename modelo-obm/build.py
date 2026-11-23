@@ -89,7 +89,7 @@ def frame(n, total, body, bg="bg-navy", decor="", footer="arrow"):
 <div class="slide {bg}">{decor}
 <div class="head"><div class="who"><div class="av"></div><div class="hd">{HANDLE} {BADGE}</div></div>{counter}</div>
 <div class="main">{body}</div>
-<div class="foot"><img class="seal" src="{A}seal_white.png">{foot_r}</div>
+<div class="foot">{"" if footer=="none" else f'<img class="seal" src="{A}seal_white.png">'}{foot_r}</div>
 </div></body></html>"""
 
 
@@ -102,8 +102,8 @@ def play_icon(w, color=NEON, tri=NAVY):
 
 def cover(n, total, title_white, title_neon, body, accent, cta, tag):
     decor = (glow(560, 60, 560, PURPLE, .55) + glow(-160, 700, 420, BLUE, .35)
-             + gfx("icon_line_neon.png", 520, 100, 470, 640, 8, .9)
-             + gfx("icon_line_lilac.png", 40, 560, 300, 400, -10, .35))
+             + gfx("icon_line_neon.png", 600, 70, 380, 520, 8, .9)
+             + gfx("icon_line_lilac.png", -130, 700, 300, 400, -10, .22))
     visual = f"""<div style="position:relative;height:430px;margin-top:6px">
       <div style="position:absolute;left:10px;top:70px;transform:rotate(-7deg);filter:drop-shadow(0 26px 50px rgba(0,0,0,.45))">{play_icon(480)}</div>
       <div class="card" style="position:absolute;right:0;top:250px;padding:22px 34px;background:{PURPLE};border-color:rgba(255,255,255,.3);transform:rotate(3deg)">
@@ -147,7 +147,7 @@ def window_visual():
     ticks = "".join(
         f'<div style="flex:1;height:{44 if i%6==0 else 30}px;border-radius:3px;background:{NEON if i>=18 else "rgba(255,255,255,.22)"}"></div>'
         for i in range(30))
-    return f"""<div class="card" style="padding:26px 30px;margin-top:34px">
+    return f"""<div class="card" style="padding:24px 30px;margin-top:26px">
       <div style="display:flex;justify-content:space-between;align-items:baseline">
         <div style="font-size:54px;font-weight:900;letter-spacing:-1.5px;color:{NEON}">10 mi</div>
         <div style="font-size:21px;font-weight:700;letter-spacing:2.5px;color:rgba(255,255,255,.65)">JANELA MÓVEL · 90 DIAS</div></div>
@@ -158,7 +158,7 @@ def window_visual():
 def monetiza(n, total):
     html = f"""<div class="title" style="font-size:112px">E QUEM<br>JÁ <em>MONETIZA?</em></div>
     <div class="rule"></div>
-    <div class="body" style="font-size:32px">
+    <div class="body" style="font-size:31px">
       <p>Existe uma <b>segunda mudança, menos comentada</b>, e ela vale para todos.</p>
       <p>A partir de 1º de fevereiro, para receber a receita de anúncios e assinaturas dos Shorts, o canal precisa de <b>10 milhões de visualizações qualificadas de Shorts nos últimos 90 dias</b>, em janela móvel.</p>
       <p>Quem ficar abaixo não precisa pedir entrada de novo, mas <b>não recebe a receita de Shorts</b> naquele período. Vale conferir no YouTube Studio se há novos termos para aceitar até 31/01/2027.</p></div>
@@ -191,7 +191,7 @@ def regua(n, total):
             <div style="font-size:30px;font-weight:600;color:rgba(255,255,255,.7)">cerca de</div>
             <div style="font-size:140px;font-weight:900;letter-spacing:-5px;color:{NEON};line-height:1">{big}</div></div>
           <div style="font-size:33px;font-weight:600;line-height:1.3;margin-top:8px">{sub}</div></div>"""
-    html = f"""<div class="title" style="font-size:116px">A RÉGUA<br>EM <em>NÚMEROS</em><br>POR DIA</div>
+    html = f"""<div class="title" style="font-size:106px">A RÉGUA<br>EM <em>NÚMEROS</em><br>POR DIA</div>
     <div class="rule"></div>
     <div style="display:flex;flex-direction:column;gap:22px">
       {block("PISO DOS SHORTS · QUEM JÁ MONETIZA","110 mil","visualizações qualificadas por dia, <b>todo dia</b>, durante 90 dias.")}
