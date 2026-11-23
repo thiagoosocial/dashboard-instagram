@@ -126,15 +126,44 @@ def pola(img, x, y, w, h, rot, cap="", pos="center", tape_rot=-4):
             f'<div class="tape" style="left:{w/2-75}px;top:-26px;transform:rotate({tape_rot}deg)"></div></div>')
 
 
+def make_cover_bg():
+    """Foto da capa em tela cheia: escala p/ caber os dois rostos e estende o fundo (parede) para cima,
+    continuando as colunas da borda superior da foto (sem fade para cor clara)."""
+    from PIL import Image
+    import numpy as np
+    src = Image.open(f"{HERE}/assets/refs/trophy.png").convert("RGB")
+    s = 1.3
+    w, h = int(src.width * s), int(src.height * s)
+    big = src.resize((w, h), Image.LANCZOS)
+    x0 = (w - 1080) // 2
+    big = big.crop((x0, 0, x0 + 1080, h))
+    top_h = 1350 - h
+    strip = np.asarray(big.crop((0, 0, 1080, 8))).astype(float).mean(axis=0)          # 1080x3
+    ext = np.tile(strip[None, :, :], (top_h + 160, 1, 1))
+    rng = np.random.default_rng(7)
+    ext = np.clip(ext + rng.normal(0, 3.2, ext.shape), 0, 255).astype("uint8")
+    canvas = Image.fromarray(ext).convert("RGB")
+    canvas = canvas.resize((1080, top_h + 160))
+    out = Image.new("RGB", (1080, 1350))
+    out.paste(canvas, (0, 0))
+    alpha = np.zeros((h, 1080), dtype="uint8")
+    ramp = np.linspace(0, 255, 160).astype("uint8")
+    alpha[:160, :] = ramp[:, None]; alpha[160:, :] = 255
+    out.paste(big, (0, top_h), Image.fromarray(alpha))
+    path = f"{HERE}/assets/refs/trophy_cover.png"
+    out.save(path)
+    return path
+
+
 # ---------------------------------------------------------------- slides
 def s1():
     yt = (f'<div style="position:absolute;left:0;right:0;top:42px;display:flex;justify-content:center;align-items:center;gap:12px;z-index:7">'
           f'<svg width="86" height="60" viewBox="0 0 86 60"><rect width="86" height="60" rx="16" fill="#ff0000"/><path d="M34 16l26 14-26 14z" fill="#fff"/></svg>'
-          f'<div style="font-family:Brico;font-weight:800;font-size:56px;letter-spacing:-.05em;color:{NAVY}">YouTube</div></div>')
-    layers = (f'<div style="position:absolute;inset:0;background:#e8e0cf"></div>'
-              f'<div style="position:absolute;left:0;top:400px;width:1080px;height:950px;background:url({R}trophy.png) center/cover;'
-              f'-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 270px);mask-image:linear-gradient(to bottom,transparent 0,#000 270px)"></div>'
-              f'<div style="position:absolute;left:0;right:0;bottom:0;height:640px;background:linear-gradient(to top,rgba(9,13,26,.96) 0,rgba(9,13,26,.86) 300px,rgba(9,13,26,0) 640px)"></div>' + yt)
+          f'<div style="font-family:Brico;font-weight:800;font-size:56px;letter-spacing:-.05em;color:#fff">YouTube</div></div>')
+    make_cover_bg()
+    layers = (f'<div style="position:absolute;inset:0;background:url({R}trophy_cover.png) center/cover"></div>'
+              f'<div style="position:absolute;left:0;right:0;top:0;height:520px;background:linear-gradient(to bottom,rgba(9,13,26,.62) 0,rgba(9,13,26,.30) 300px,rgba(9,13,26,0) 520px)"></div>'
+              f'<div style="position:absolute;left:0;right:0;bottom:0;height:640px;background:linear-gradient(to top,rgba(9,13,26,.96) 0,rgba(9,13,26,.84) 300px,rgba(9,13,26,0) 640px)"></div>' + yt)
     ic = 'fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"'
     player = f"""<div style="position:absolute;left:44px;right:44px;bottom:34px;z-index:7;color:#fff">
         <div style="position:relative;height:5px;background:rgba(255,255,255,.35);border-radius:3px"><div style="width:11%;height:5px;background:#ff2d2d;border-radius:3px"></div>
@@ -154,7 +183,7 @@ def s1():
           <div class="hand" style="font-size:54px;color:{NEON}">E ela não afeta só quem está começando.</div></div>
         <div class="hand" style="font-size:54px;color:{NEON};text-align:right;margin-top:4px">Vem conferir →</div></div>"""
     inner = f"""<h1 style="font-size:116px;text-align:center;margin-top:52px;line-height:1.1">O YOUTUBE<br><span class="hl">VAI MUDAR</span></h1>"""
-    return page(1, inner, "paper", nxt="", extra=layers + bottom + player)
+    return page(1, inner, "dark", nxt="", extra=layers + bottom + player)
 
 def s2():
     lab = lambda t: f'<div class="hand" style="font-size:44px;line-height:1.05;opacity:.85">{t}</div>'
