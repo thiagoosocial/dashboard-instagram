@@ -8,7 +8,7 @@ sem elementos institucionais (sem tag, barra de progresso ou selo; logo pequeno 
 - **Anotações à mão** (Caveat) e rabiscos: círculos em volta dos números, sublinhados, setas, "arrasta →".
 - **Marca-texto neon** de verdade nas palavras-chave do título (Bricolage Grotesque 800).
 - **Post-its neon** para dados curtos; **folha pautada** para tabela; **balão de fala** com a foto dele na opinião.
-- **Cabeçalho pessoal:** foto grande + nome + @ + página escrita à mão ("3/7").
+- **Cabeçalho:** só `@reinaldoheleno` (esq.) e `01/07` (dir.), sem foto/selo. A capa imita o player do YouTube (logo, título centralizado, barra de reprodução). A foto dele aparece só em detalhes opinativos (slides 4, 6 e 7).
 - Alterna **papel** (#F2EEE5) e **fundo escuro** (navy quase preto). Cor da marca só em destaques e rabiscos
   (Neon #E2FC51, Purple #8140FA, Navy #142544).
 
