@@ -10,7 +10,7 @@ const fs = require('fs');
     await p.evaluate(() => document.fonts.ready);
     await p.waitForTimeout(250);
     const m = await p.evaluate(() => {
-      const sl = document.querySelector('.slide');
+      const sl = document.querySelector('.main');
       return { overflow: sl.scrollHeight - sl.clientHeight };
     });
     console.log(f, JSON.stringify(m));

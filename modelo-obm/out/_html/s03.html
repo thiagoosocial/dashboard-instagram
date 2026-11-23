@@ -1,48 +1,45 @@
-<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:'Anton';src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts2/anton-latin-400-normal.woff2') format('woff2');}@font-face{font-family:'Poppins';font-weight:300;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts2/poppins-latin-300-normal.woff2') format('woff2');}@font-face{font-family:'Poppins';font-weight:400;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts2/poppins-latin-400-normal.woff2') format('woff2');}@font-face{font-family:'Poppins';font-weight:600;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts2/poppins-latin-600-normal.woff2') format('woff2');}@font-face{font-family:'Serif';font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts2/instrument-serif-latin-400-normal.woff2') format('woff2');}@font-face{font-family:'Serif';font-style:italic;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts2/instrument-serif-latin-400-italic.woff2') format('woff2');}
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:'DM Sans';font-weight:400;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-400-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:500;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-500-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:600;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-600-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:700;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-700-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:800;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-800-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:900;font-style:normal;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-900-normal.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:600;font-style:italic;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-600-italic.woff2') format('woff2');}@font-face{font-family:'DM Sans';font-weight:700;font-style:italic;src:url('file:///home/user/dashboard-instagram/modelo-obm/fonts/dm-sans-latin-700-italic.woff2') format('woff2');}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1350px;background:#000}
-.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'Poppins',sans-serif;color:#fff;
-  display:flex;flex-direction:column;padding:64px 68px 56px}
-.dark{background:radial-gradient(120% 70% at 85% 0%,#1d2c63 0%,rgba(20,37,68,0) 60%),linear-gradient(180deg,#0b0c12 0%,#07070b 100%)}
-.dark2{background:radial-gradient(110% 60% at 10% 100%,#2a1a66 0%,rgba(20,20,60,0) 62%),linear-gradient(180deg,#0a0a10,#08080d)}
-.light{background:#E8E8E9;color:#0d0d14}
-.noise{position:absolute;inset:0;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");opacity:.07;mix-blend-mode:overlay;pointer-events:none;z-index:9}
-.light .noise{opacity:.5;mix-blend-mode:multiply}
-.handle{position:relative;z-index:5;display:flex;align-items:center;gap:12px;font-size:27px;font-weight:400;letter-spacing:-.2px;flex:none}
-.handle.c{justify-content:center}
-.title{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:-.012em;line-height:1.0;font-weight:400}
-.title .h{color:#E2FC51;text-shadow:0 0 44px rgba(226,252,81,.35)}
-.light .title .h{color:#8140FA;text-shadow:none}
-.rule{height:3px;width:200px;background:linear-gradient(90deg,#E2FC51,rgba(226,252,81,0));margin:26px 0 24px}
-.rule.c{margin-left:auto;margin-right:auto;background:linear-gradient(90deg,rgba(226,252,81,0),#E2FC51,rgba(226,252,81,0))}
-.light .rule{background:#c3c3cc;width:100%;height:2px}
-.hr{height:2px;width:100%;background:rgba(255,255,255,.18);margin:26px 0}
-.body{font-weight:300;font-size:32px;line-height:1.45;color:rgba(255,255,255,.9)}
-.body b{font-weight:600;color:#fff}
-.body p+p{margin-top:.55em}
-.light .body{color:#2a2a35} .light .body b{color:#0d0d14}
-.acc{font-family:'Serif',serif;font-style:italic;font-size:50px;line-height:1.1;color:#79AAF7;letter-spacing:-.2px}
-.light .acc{color:#3157F7}
-.src{font-size:21px;font-weight:400;color:rgba(255,255,255,.5);margin-top:16px}
-.light .src{color:#6b6b78}
-.btn{display:flex;align-items:center;justify-content:center;gap:16px;height:66px;padding:0 40px;border-radius:99px;border:2px solid rgba(255,255,255,.9);
-  font-size:24px;font-weight:400;color:#fff;flex:none}
-.light .btn{border-color:#0d0d14;color:#0d0d14}
-.foot{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px;flex:none}
-.foot.r{justify-content:flex-end}
-.seal{height:36px;opacity:.7} .light .seal{filter:invert(1)}
-.card{background:#fff;border-radius:6px;color:#0d0d14}
-.frame{border:1.5px solid rgba(255,255,255,.35);overflow:hidden}
-.kicker{font-family:'Serif',serif;font-size:34px;letter-spacing:.01em;text-transform:uppercase;color:rgba(255,255,255,.85)}
-.serif{font-family:'Serif',serif;font-weight:400;letter-spacing:-.01em;line-height:.98}
-.serif em{font-style:italic;color:#E2FC51}
-</style></head><body><div class="slide light"><div class="handle">@reinaldoheleno <svg width="26" height="26" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1d9bf0"/><path d="M7 12.5l3.2 3.2L17 8.8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="frame" style="margin-top:22px;border:none;border-radius:2px;box-shadow:0 18px 50px rgba(0,0,0,.25)"><img src="file:///home/user/dashboard-instagram/modelo-obm/assets/refs/shorts_phones.png" style="display:block;width:100%;"></div>
-    <div class="title" style="font-size:96px;margin-top:26px;color:#0d0d14">E QUEM JÁ <span class="h">MONETIZA?</span></div>
-    <div class="rule" style="margin:18px 0 16px"></div>
-    <div class="body" style="font-size:25.5px;line-height:1.4"><p>Existe uma <b>segunda mudança, menos comentada</b>, e ela vale para todos.</p>
-      <p>A partir de 1º de fevereiro, para receber a receita de anúncios e assinaturas dos Shorts, o canal precisa de <b>10 milhões de visualizações qualificadas de Shorts nos últimos 90 dias</b>, em janela móvel.</p>
-      <p>Quem ficar abaixo não precisa pedir entrada de novo, mas <b>não recebe a receita de Shorts</b> naquele período.</p></div>
-    <div class="acc" style="margin-top:14px;font-size:38px">Vale conferir no YouTube Studio se há novos termos para aceitar até 31/01/2027.</div>
-    <div class="src">Fonte: Digiday e guias do setor</div>
-    <div class="foot"><img class="seal" src="file:///home/user/dashboard-instagram/modelo-obm/assets/seal_white.png"><div class="btn"><svg width="54" height="22" viewBox="0 0 54 22"><path d="M2 11h48M41 2l9 9-9 9" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="noise"></div></div></body></html>
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'DM Sans',sans-serif;color:#fff;
+  display:flex;flex-direction:column;padding:60px 68px 54px}
+.dark{background:radial-gradient(circle,rgba(255,255,255,.07) 1.4px,transparent 1.6px) 0 0/34px 34px,
+  radial-gradient(90% 55% at 100% 0%,#1b2a5c 0%,rgba(20,37,68,0) 70%),#0a0e1a}
+.light{background:radial-gradient(circle,rgba(20,37,68,.10) 1.4px,transparent 1.6px) 0 0/34px 34px,#E8E8E9;color:#142544}
+.gfx{position:absolute;background-repeat:no-repeat;background-size:contain;pointer-events:none;z-index:0}
+.top{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;height:54px;flex:none}
+.who{display:flex;align-items:center;gap:14px;font-size:25px;font-weight:500;letter-spacing:-.2px}
+.who .ic{height:44px;width:auto} .light .who .ic{filter:invert(1)}
+.tag{font-size:19px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:9px 18px;border-radius:99px;
+  border:1.5px solid rgba(255,255,255,.4);color:rgba(255,255,255,.85)}
+.light .tag{border-color:rgba(20,37,68,.4);color:#142544}
+.main{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;min-height:0;padding-top:30px}
+h1{font-weight:800;letter-spacing:-.04em;line-height:1.12}
+.mk{background:#E2FC51;color:#142544;padding:.0em .14em .04em;border-radius:.12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.body{font-size:30px;line-height:1.42;font-weight:400;color:rgba(255,255,255,.88)}
+.body b{font-weight:700;color:#fff}
+.body p+p{margin-top:.6em}
+.light .body{color:#2b3550} .light .body b{color:#142544}
+.call{border-left:9px solid #E2FC51;padding:2px 0 2px 24px;font-weight:700;letter-spacing:-.01em;line-height:1.2;color:#fff}
+.light .call{border-left-color:#8140FA;color:#142544}
+.src{font-size:21px;color:rgba(255,255,255,.5);margin-top:14px} .light .src{color:#5d6784}
+.bot{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;height:58px;margin-top:auto;flex:none}
+.prog{display:flex;gap:8px;align-items:center}
+.prog i{display:block;width:38px;height:7px;border-radius:4px;background:rgba(255,255,255,.22)}
+.prog i.on{background:#E2FC51} .prog i.cur{width:64px}
+.light .prog i{background:rgba(20,37,68,.2)} .light .prog i.on{background:#142544}
+.chip{display:flex;align-items:center;gap:12px;height:54px;padding:0 24px;border-radius:99px;font-size:22px;font-weight:700;
+  background:rgba(255,255,255,.12);color:#fff}
+.light .chip{background:rgba(20,37,68,.1);color:#142544}
+.chip.f{background:#E2FC51;color:#142544}
+.panel{border-radius:30px;padding:30px 34px}
+.lbl{font-size:20px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.light .lbl{color:#5d6784}
+</style></head><body><div class="slide dark"><div class="gfx" style="left:-170px;top:760px;width:480px;height:650px;background-image:url(file:///home/user/dashboard-instagram/modelo-obm/assets/icon_line_blue.png);transform:rotate(-10deg);opacity:0.14"></div><div class="top"><div class="who"><img class="ic" src="file:///home/user/dashboard-instagram/modelo-obm/assets/icon_white.png">@reinaldoheleno <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1d9bf0"/><path d="M7 12.5l3.2 3.2L17 8.8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tag">YouTube 2027</div></div><div class="main"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-top:-6px">
+        <h1 style="font-size:108px;margin-top:20px;white-space:nowrap;line-height:1.12">E quem já<br><span class="mk">monetiza?</span></h1>
+        <div style="position:relative;margin-right:-22px;margin-top:10px"><svg width="382" height="368" viewBox="0 0 382 368" style="display:block;overflow:visible;flex:none"><defs><clipPath id="mshorts_phones360" clipPathUnits="objectBoundingBox"><path d="M0 .07 L.40 0 L.47 .13 L.80 .07 L1 .58 Q1 .73 .88 .80 L.60 .97 Q.32 1.07 .10 .91 Q0 .83 0 .70 Z"/></clipPath></defs><g transform="translate(22,18) scale(360,350)"><path d="M0 .07 L.40 0 L.47 .13 L.80 .07 L1 .58 Q1 .73 .88 .80 L.60 .97 Q.32 1.07 .10 .91 Q0 .83 0 .70 Z" fill="none" stroke="#E2FC51" stroke-width="3" vector-effect="non-scaling-stroke"/></g><image href="file:///home/user/dashboard-instagram/modelo-obm/assets/refs/shorts_phones.png" x="0" y="0" width="360" height="350" preserveAspectRatio="xMidYMid slice" clip-path="url(#mshorts_phones360)"/></svg></div></div>
+      <div class="body" style="margin-top:34px;font-size:31px;line-height:1.42"><p>Existe uma <b>segunda mudança, menos comentada</b>, e ela vale para todos.</p>
+        <p>A partir de 1º de fevereiro, para receber a receita de anúncios e assinaturas dos Shorts, o canal precisa de <b>10 milhões de visualizações qualificadas de Shorts nos últimos 90 dias</b>, em janela móvel.</p>
+        <p>Quem ficar abaixo não precisa pedir entrada de novo, mas <b>não recebe a receita de Shorts</b> naquele período.</p></div>
+      <div class="call" style="margin-top:30px;font-size:34px">Vale conferir no YouTube Studio se há novos termos para aceitar até <span class="mk" style="padding:0 .12em">31/01/2027</span>.</div>
+      <div class="src">Fonte: Digiday e guias do setor</div></div><div class="bot"><div class="prog"><i class="on"></i><i class="on"></i><i class="on cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><div class="chip">Arrasta<svg width="34" height="16" viewBox="0 0 34 16"><path d="M2 8h28M23 2l7 6-7 6" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div></body></html>
