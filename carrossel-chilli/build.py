@@ -29,10 +29,13 @@ html,body{{width:1080px;height:1350px;background:#fff;font-family:'Montserrat',s
 .img .shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 35%,rgba(0,0,0,.78) 100%)}}
 .img .slot{{position:absolute;inset:0;background:radial-gradient(circle at 75% 15%,#4a0d14 0,#0b0b10 62%);display:flex;align-items:center;justify-content:center}}
 .img .slot span{{position:absolute;top:18px;left:22px;font-size:17px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35)}}
-.fig{{position:absolute;left:0;right:0;bottom:0;padding:22px 30px 24px;color:#fff;display:flex;align-items:flex-end;gap:22px;flex-wrap:nowrap}}
-.fig .n{{font-weight:800;letter-spacing:-.03em;line-height:1}}
-.fig .n.r{{color:{RED}}}
-.fig .t{{font-weight:600;font-size:21px;line-height:1.25;color:rgba(255,255,255,.82);max-width:340px}}
+.credit{{position:absolute;top:14px;right:18px;z-index:3;font-size:15px;font-weight:600;color:rgba(255,255,255,.88);text-shadow:0 1px 4px rgba(0,0,0,.75)}}
+.lt .credit{{color:rgba(0,0,0,.55);text-shadow:none}}
+.lt .fig{{color:#111}} .lt .fig .t{{color:rgba(0,0,0,.66)}} .lt .fig .ar{{color:rgba(0,0,0,.35)}}
+.fig{{position:absolute;left:0;right:0;bottom:0;padding:22px 26px 24px;color:#fff;display:flex;align-items:flex-end;gap:18px;flex-wrap:nowrap;zoom:.9}}
+.fig .n{{font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}}
+.fig .n.r{{color:#ff5555}} .lt .fig .n.r{{color:#e01616}}
+.fig .t{{font-weight:600;font-size:19px;line-height:1.25;color:rgba(255,255,255,.88);max-width:300px}}
 .fig .ar{{font-size:44px;font-weight:800;color:rgba(255,255,255,.5);line-height:1;align-self:center}}
 """
 BADGE = '<svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1d9bf0"/><path d="M7 12.5l3.2 3.2L17 8.8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -54,16 +57,22 @@ def fig(*parts):
 
 def slide(n, text, size, visual, label):
     photo = os.path.join(HERE, "photos", f"s{n}.jpg")
+    light = n in LIGHT
     if os.path.exists(photo):
-        box = f'<div class="ph" style="background-image:url(file://{photo})"></div><div class="shade"></div>{visual}'
+        shade = "" if light else '<div class="shade"></div>'
+        box = f'<div class="ph" style="background-image:url(file://{photo})"></div>{shade}<div class="credit">{CREDIT[n]}</div>{visual}'
     else:
         box = f'<div class="slot"><span>{label}</span></div>{visual}'
     html = f"""<!doctype html><html><head><meta charset="utf-8"><style>{BASE}.txt{{font-size:{size}px}}</style></head><body><div class="slide">
 <div class="head"><div class="av"></div><div class="who"><div class="nm">Reinaldo Heleno {BADGE}</div><div class="hd">@reinaldoheleno</div></div></div>
-<div class="txt">{text}</div><div class="img">{box}</div></div></body></html>"""
+<div class="txt">{text}</div><div class="img{" lt" if (light and os.path.exists(photo)) else ""}">{box}</div></div></body></html>"""
     return html
 
 
+CAITO = "Foto: M. S. C. Silva / CC BY-SA 4.0"
+PROD = "Foto: Chilli Beans"
+CREDIT = {1: CAITO, 2: PROD, 3: CAITO, 4: CAITO, 5: PROD, 6: CAITO, 7: CAITO, 8: CAITO}
+LIGHT = {2, 5}
 src = lambda t: f'<div class="src">Fonte: {t}</div>'
 S = []
 S.append((46, "<b>Anunciou R$ 2 bilhões para 2026. Em outubro, pediu recuperação extrajudicial.</b>" + G +

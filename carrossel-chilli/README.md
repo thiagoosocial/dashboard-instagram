@@ -1,4 +1,6 @@
 # Carrossel Chilli Beans — design Twitter do Leno
-8 slides em Montserrat (mesmo molde do primeiro carrossel). O espaço de imagem de cada slide mostra o dado principal;
-para colocar fotos do Caito Maia / Chilli Beans, salve em `photos/s1.jpg` … `photos/s8.jpg` e rode `python3 build.py`
-(o dado vira legenda sobre a foto). Saída: `out/slide-XX.png` e `out/carrossel.pdf`.
+8 slides em Montserrat, com fotos em todos.
+- Fotos do Caito Maia: Wikimedia Commons, "Caito Maia.jpg", CC BY-SA 4.0 (crédito na imagem). Salvas em `assets/src/caito.jpg`.
+- Fotos de óculos: site oficial loja.chillibeans.com.br (slides 2 e 5), em `assets/src/prod/`.
+- `python3 prep_photos.py` gera `photos/s1..s8.jpg`; `python3 build.py` gera `out/slide-XX.png` e `out/carrossel.pdf`.
+Para trocar uma foto, salve a nova em `photos/sN.jpg` (depois do prep_photos) e rode build.py.
