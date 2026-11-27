@@ -31,6 +31,7 @@ html,body{{width:1080px;height:1350px;background:#fff;font-family:'Montserrat',s
 .img .slot span{{position:absolute;top:18px;left:22px;font-size:17px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35)}}
 .credit{{position:absolute;top:14px;right:18px;z-index:3;font-size:15px;font-weight:600;color:rgba(255,255,255,.88);text-shadow:0 1px 4px rgba(0,0,0,.75)}}
 .lt .credit{{color:rgba(0,0,0,.55);text-shadow:none}}
+.img.lt{{border:2px solid #e3e3e3}}
 .lt .fig{{color:#111}} .lt .fig .t{{color:rgba(0,0,0,.66)}} .lt .fig .ar{{color:rgba(0,0,0,.35)}}
 .fig{{position:absolute;left:0;right:0;bottom:0;padding:22px 26px 24px;color:#fff;display:flex;align-items:flex-end;gap:18px;flex-wrap:nowrap;zoom:.9}}
 .fig .n{{font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}}
@@ -58,9 +59,12 @@ def fig(*parts):
 def slide(n, text, size, visual, label):
     photo = os.path.join(HERE, "photos", f"s{n}.jpg")
     light = n in LIGHT
+    if n in NOIMG:
+        size = BIG[n]
+        return f'<!doctype html><html><head><meta charset="utf-8"><style>{BASE}.txt{{font-size:{size}px;flex:1;display:flex;flex-direction:column;justify-content:center;margin-top:0;padding-bottom:40px}}</style></head><body><div class="slide"><div class="head"><div class="av"></div><div class="who"><div class="nm">Reinaldo Heleno {BADGE}</div><div class="hd">@reinaldoheleno</div></div></div><div class="txt"><div>{text}</div></div></div></body></html>'
     if os.path.exists(photo):
         shade = "" if light else '<div class="shade"></div>'
-        box = f'<div class="ph" style="background-image:url(file://{photo})"></div>{shade}<div class="credit">{CREDIT[n]}</div>{visual}'
+        box = f'<div class="ph" style="background-image:url(file://{photo})"></div>{shade}{visual}'
     else:
         box = f'<div class="slot"><span>{label}</span></div>{visual}'
     html = f"""<!doctype html><html><head><meta charset="utf-8"><style>{BASE}.txt{{font-size:{size}px}}</style></head><body><div class="slide">
@@ -71,8 +75,10 @@ def slide(n, text, size, visual, label):
 
 CAITO = "Foto: M. S. C. Silva / CC BY-SA 4.0"
 PROD = "Foto: Chilli Beans"
-CREDIT = {1: CAITO, 2: PROD, 3: CAITO, 4: CAITO, 5: PROD, 6: CAITO, 7: CAITO, 8: CAITO}
-LIGHT = {2, 5}
+CREDIT = {n: "" for n in range(1, 9)}
+LIGHT = {3}
+NOIMG = {5, 7, 8}
+BIG = {5: 44, 7: 36, 8: 54}
 src = lambda t: f'<div class="src">Fonte: {t}</div>'
 S = []
 S.append((46, "<b>Anunciou R$ 2 bilhões para 2026. Em outubro, pediu recuperação extrajudicial.</b>" + G +
